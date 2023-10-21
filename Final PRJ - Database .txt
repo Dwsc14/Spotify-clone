@@ -1,0 +1,83 @@
+Bảng users:
+
+user_id (PK): Khóa chính, duy nhất, số nguyên - ID người dùng.
+username: Chuỗi - Tên người dùng.
+email: Chuỗi - Địa chỉ email của người dùng.
+password: Chuỗi - Mật khẩu đã mã hóa của người dùng.
+created_at: Ngày giờ - Thời điểm tạo tài khoản.
+
+//-------------------------------------------------------------------------//
+
+Bảng artists:
+
+artist_id (PK): Khóa chính, duy nhất, số nguyên - ID nghệ sĩ.
+name: Chuỗi - Tên nghệ sĩ.
+bio: Chuỗi - Tiểu sử nghệ sĩ.
+image_url: Chuỗi - Đường dẫn đến hình ảnh nghệ sĩ (URL).
+
+//-------------------------------------------------------------------------//
+
+Bảng music_tracks:
+
+track_id (PK): Khóa chính, duy nhất, số nguyên - ID tác phẩm âm nhạc.
+title: Chuỗi - Tên tác phẩm.
+artist_id (FK): Khóa ngoại - Liên kết với artist_id trong bảng artists.
+description: Chuỗi - Mô tả tác phẩm.
+genre: Chuỗi - Thể loại của tác phẩm.
+audio_url: Chuỗi - Đường dẫn đến tệp âm thanh (URL).
+price: Số thập phân - Giá bán của tác phẩm.
+created_at: Ngày giờ - Thời điểm tạo tác phẩm.
+
+//-------------------------------------------------------------------------//
+
+Bảng user_favorite_tracks:
+
+favorite_id (PK): Khóa chính, duy nhất, số nguyên - ID yêu thích.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+track_id (FK): Khóa ngoại - Liên kết với track_id trong bảng music_tracks.
+
+//-------------------------------------------------------------------------//
+
+Bảng user_purchases:
+
+purchase_id (PK): Khóa chính, duy nhất, số nguyên - ID giao dịch mua.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+track_id (FK): Khóa ngoại - Liên kết với track_id trong bảng music_tracks.
+purchase_date: Ngày giờ - Thời điểm giao dịch mua.
+
+//-------------------------------------------------------------------------//
+
+Bảng user_playlists:
+
+playlist_id (PK): Khóa chính, duy nhất, số nguyên - ID danh sách phát.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+playlist_name: Chuỗi - Tên danh sách phát.
+
+//-------------------------------------------------------------------------//
+
+Bảng comments:
+
+comment_id (PK): Khóa chính, duy nhất, số nguyên - ID bình luận.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+track_id (FK): Khóa ngoại - Liên kết với track_id trong bảng music_tracks.
+content: Chuỗi - Nội dung bình luận.
+comment_date: Ngày giờ - Thời điểm bình luận.
+
+//-------------------------------------------------------------------------//
+
+Bảng orders:
+
+order_id (PK): Khóa chính, duy nhất, số nguyên - ID đơn đặt hàng.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+track_id (FK): Khóa ngoại - Liên kết với track_id trong bảng music_tracks.
+order_date: Ngày giờ - Thời điểm đặt hàng.
+total_price: Số thập phân - Tổng giá trị đơn đặt hàng.
+
+//-------------------------------------------------------------------------//
+
+Bảng ratings:
+
+rating_id (PK): Khóa chính, duy nhất, số nguyên - ID đánh giá.
+user_id (FK): Khóa ngoại - Liên kết với user_id trong bảng users.
+track_id (FK): Khóa ngoại - Liên kết với track_id trong bảng music_tracks.
+rating_value: Số nguyên - Giá trị xếp hạng (ví dụ: 1-5).

@@ -1,0 +1,45 @@
+# Bảng Kế hoạch Dự án Thư viện Âm nhạc Độc lập
+
+## Mục tiêu
+
+Xây dựng trang web cho phép nghệ sĩ âm nhạc độc lập tải lên và bán âm nhạc của họ dưới dạng NFT, cùng với tích hợp thanh toán và tạo trải nghiệm người dùng tốt.
+
+## Bước 1: Thiết kế Giao diện
+
+- [ ] Thiết kế giao diện trang web với HTML và CSS.
+- [ ] Xây dựng các trang chính, tìm kiếm, cá nhân của nghệ sĩ và chi tiết của âm nhạc.
+
+## Bước 2: Đăng ký và Đăng nhập
+
+- [ ] Tạo trang đăng ký và đăng nhập (1 tuần).
+- [ ] Xây dựng hệ thống kiểm tra và xác thực thông tin đăng nhập.
+
+## Bước 3: Xây dựng Cơ sở dữ liệu
+
+- [ ] Sử dụng Java để xây dựng cơ sở dữ liệu cho người dùng, nghệ sĩ và âm nhạc.
+- [ ] Tích hợp hệ quản lý cơ sở dữ liệu (DBMS) .
+
+## Bước 4: Tích hợp Ví Tiền và Thanh toán
+
+- [ ] Sử dụng JavaScript để tích hợp hệ thống thanh toán và ví tiền.
+- [ ] Cho phép người dùng mua âm nhạc và nghệ sĩ nhận thanh toán.
+
+## Bước 5: Tải lên và Quản lý Âm nhạc
+
+- [ ] Tạo giao diện cho nghệ sĩ tải lên và quản lý âm nhạc.
+- [ ] Sử dụng JavaScript để kiểm tra và xác thực các tác phẩm nghệ thuật.
+
+## Bước 6: Hiển thị danh sách âm nhạc và tích hợp tìm kiếm
+
+- [ ] Sử dụng HTML và JavaScript để hiển thị danh sách âm nhạc.
+- [ ] Tích hợp chức năng tìm kiếm.
+
+## Bước 7: Tạo Hồ sơ Nghệ sĩ và Người dùng
+
+- [ ] Tạo giao diện cho nghệ sĩ và người dùng tạo hồ sơ cá nhân.
+- [ ] Cho phép họ thêm thông tin cá nhân, danh sách âm nhạc yêu thích và lịch sử giao dịch.
+
+## Bước 8: Xác thực và Kiểm tra
+
+- [ ] Sử dụng Java để xây dựng cơ chế kiểm tra và xác thực tính hợp pháp của tác phẩm nghệ thuật.
+- [ ] Kiểm tra trang web trước khi ra mắt và tối ưu hóa hiệu suất.
