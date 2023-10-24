@@ -7,6 +7,16 @@ Xây dựng trang web cho phép nghệ sĩ âm nhạc độc lập tải lên v�
 ## Bước 1: Thiết kế Giao diện
 
 - [ ] Thiết kế giao diện trang web với HTML và CSS.
+
+        + [ ] index.jsp: Giao diện chính hiển thị danh sách âm nhạc.
+        + [ ] music_detail.jsp: Giao diện chi tiết của một bản nhạc.
+        + [ ] user_profile.jsp: Giao diện trang cá nhân của người dùng.
+        + [ ] artist_profile.jsp: Giao diện trang cá nhân của nghệ sĩ.
+        + [ ] registration.jsp: Giao diện đăng ký.
+        + [ ] login.jsp: Giao diện đăng nhập.
+        + [ ] upload_music.jsp: Giao diện tải lên âm nhạc.
+        + [ ] payment.jsp : Giao diện trang thanh toán
+
 - [ ] Xây dựng các trang chính, tìm kiếm, cá nhân của nghệ sĩ và chi tiết của âm nhạc.
 
 ## Bước 2: Đăng ký và Đăng nhập
