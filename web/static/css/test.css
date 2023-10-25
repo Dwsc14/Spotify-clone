@@ -1,0 +1,14 @@
+/* style.css */
+.clickable-div {
+    width: 200px;
+    height: 100px;
+    background-color: lightgray;
+    border: 2px solid black; /* Màu viền ban đầu là đen */
+    text-align: center;
+    line-height: 100px;
+}
+
+#myInput {
+    width: 80%;
+    padding: 5px;
+}
