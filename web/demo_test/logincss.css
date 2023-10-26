@@ -306,14 +306,3 @@ form.ani-hide {
 .button:hover {
     background: rgba(25, 204, 139, 0.85);
 }
-
-.text,
-.text a,
-.icons a {
-    color: #fff;
-}
-
-.text a:hover,
-.icons a:hover {
-    color: #515866;
-}
