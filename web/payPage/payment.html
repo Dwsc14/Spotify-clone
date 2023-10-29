@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="static/css/payment.css">
+
+<div id="wrapper">
+    <div id="container">
+        <div id="left-col">
+            <div class="offerCard">
+                <div class="offerCardHeader">
+                    <div class="offerCardHeader-left">
+                        <h1>Premium Individual</h1>
+                        <h3 class="kLDMwE oiHRE">1 tài khoản Premium</h3>
+                    </div>
+                    <div class="offerCardHeader-right">
+                        <p id="p1">0&nbsp;₫</p>
+                        <p id="p2">Trong 1 tháng</p>
+                    </div>
+                </div>
+
+                <div class="offerCardBody">
+                    <div class="offerCardBody-insde" id="OCB1">
+                        <p>Bắt đầu tháng miễn phí</p>
+                        <p>Hôm nay</p>
+                    </div>
+
+                    <div class="offerCardBody-insde" id="OCB2">
+                        <p>Ngày bắt đầu thanh toán</p>
+                        <p>26 thg 11, 2023</p>
+                    </div>
+
+                    <ul class="details" role="list">
+                        <li>
+                            <p>Chỉ 59.000&nbsp;₫/tháng sau 1 tháng dùng thử</p>
+                        </li>
+                        <li>
+                            <p>Bạn sẽ không bị tính phí cho đến ngày 26 thg 11, 2023</p>
+                        </li>
+                        <li>
+                            <p>Hủy bất kỳ lúc nào. Có áp dụng
+                                <a href="https://www.spotify.com/legal/premium-promotional-offer-terms/" target="_blank"
+                                    rel="noopener" class="Link-k8gsk-0 kYyKPG">Điều khoản ưu đãi</a>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Chúng tôi sẽ nhắc bạn vào thời điểm 7 ngày trước khi bạn bị tính phí.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-col">
+            <h2>Payment</h2>
+            <div id="logotype">
+                <img id="mastercard" src="http://emilcarlsson.se/assets/MasterCard_Logo.png" alt="" />
+            </div>
+
+            <form action="">
+                <label for="">Cardnumber</label>
+                <div id="cardnumber">
+                    <input type="number" max="4" max-length="4" min="4" placeholder="0123" /> <span
+                        class="divider">-</span>
+                    <input type="number" max="4" max-length="4" min="4" placeholder="4567" /> <span
+                        class="divider">-</span>
+                    <input type="number" max="4" max-length="4" min="4" placeholder="8901" /> <span
+                        class="divider">-</span>
+                    <input type="number" max="4" max-length="4" min="4" placeholder="2345" />
+                </div>
+
+                <label for="">Cardholder</label>
+                <input id="cardholder" type="text" placeholder="John Doe" />
+                <div class="left">
+                    <label for="">Expiration Date</label>
+                    <select name="month" id="month" onchange="" size="1">
+                        <option value="00">Month</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select name="year" id="year" onchange="" size="1">
+                        <option value="00">Year</option>
+                        <option value="01">2016</option>
+                        <option value="02">2017</option>
+                        <option value="03">2018</option>
+                        <option value="04">2019</option>
+                        <option value="05">2020</option>
+                        <option value="06">2021</option>
+                        <option value="07">2022</option>
+                        <option value="08">2023</option>
+                        <option value="09">2024</option>
+                        <option value="10">2025</option>
+                    </select>
+                </div>
+
+                <div class="right">
+                    <label id="cvc-label" for="">CVC <i class="fa fa-question-circle-o" aria-hidden="true"></i></label>
+                    <input id="cvc" type="text" placeholder="123" maxlength="3" />
+                </div>
+                <button id="purchase">Purchase</button>
+                <button id="paypal"><i class="fa fa-paypal" aria-hidden="true"></i> Pay with PayPal</button>
+                <p id="support">Having problem with checkout? <a href="#">Contact our support</a>.</p>
+            </form>
+        </div>
+    </div>
+</div>
