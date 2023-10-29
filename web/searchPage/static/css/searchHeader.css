@@ -21,7 +21,7 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    
+
 }
 
 header .head-bar {
@@ -95,12 +95,12 @@ header .head-bar .left nav .input-search::before {
     border: 3px solid rgba(255, 255, 255, .25);
 }
 
-header .head-bar .left nav .input-search .bi{
+header .head-bar .left nav .input-search .bi {
     font-size: 20px;
     padding: 0 10px;
 }
 
-header .head-bar .left nav .input-search input{
+header .head-bar .left nav .input-search input {
     background: none;
     outline: none;
     border: none;
@@ -125,7 +125,7 @@ header .head-bar .right nav {
     justify-content: flex-end;
 }
 
-header .head-bar .right button{
+header .head-bar .right button {
     width: 37.5%;
     height: 40%;
     font-size: 13px;
@@ -135,14 +135,14 @@ header .head-bar .right button{
     cursor: pointer;
 }
 
-header .head-bar .right .bi{
+header .head-bar .right .bi {
     font-size: 22.5px;
     cursor: pointer;
     margin: 0 5%;
     color: gray;
 }
 
-header .head-bar .right .bi:hover{
+header .head-bar .right .bi:hover {
     color: #fff;
 }
 
