@@ -175,7 +175,6 @@ body {
     width: 100%;
     height: 77.5%;
     display: flex;
-    justify-content: space-between;
 }
 
 .container .inside .menu .playList .list .song {
@@ -184,6 +183,13 @@ body {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: auto 0;
+    margin-right: 3%;
+    /* Đặt khoảng cách giữa các ô ở đây */
+}
+
+.container .inside .menu .playList .list .song:last-child {
+    margin-right: 0;
+    /* Loại bỏ margin-right cho ô cuối cùng */
 }
 
 .container .inside .menu .playList .list a {
