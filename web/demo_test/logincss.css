@@ -156,7 +156,7 @@
     border-bottom: 4px solid #fff;
 }
 
-form {
+.form-text {
     margin: 30px 0;
     height: 58px;
     overflow: hidden;
@@ -165,7 +165,7 @@ form {
     transform: scaleY(1);
 }
 
-form.ani-hide {
+.form-text.ani-hide {
     transition: opacity 0.5s ease, transform 0.75s, height 0.25s;
     transform: scaleY(0);
     height: 0;
@@ -195,67 +195,6 @@ form.ani-hide {
 .content:focus {
     outline: none;
     background: rgba(81, 88, 102, 0.1);
-}
-
-.security {
-    position: absolute;
-    transform: translateY(5px);
-    right: -5px;
-    width: 60px;
-    height: 60px;
-    opacity: 1;
-}
-
-.security.hide {
-    opacity: 0;
-}
-
-.circle {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: background 0.25s ease;
-    transform: translate(-50%, -50%);
-}
-
-.circle.background {
-    z-index: 9999;
-    background: #19cc8b;
-}
-
-.circle.fill {
-    z-index: 10000;
-}
-
-.circle.cover {
-    z-index: 10000;
-    background: #2a2d33;
-    width: 50px;
-    height: 50px;
-}
-
-.security-type {
-    z-index: 10001;
-    text-align: center;
-    line-height: 90%;
-    color: #19cc8b;
-    top: 50%;
-    left: 50%;
-    transform: translate(-48%, -40%);
-}
-
-.security-level {
-    font-weight: 900;
-}
-
-.secure {
-    font-weight: 300;
-    font-size: 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .password .content {
@@ -301,6 +240,7 @@ form.ani-hide {
     display: block;
     cursor: pointer;
     transition: background 0.25s ease;
+    border: none;
 }
 
 .button:hover {
