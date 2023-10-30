@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 
-.inside a{
+.inside a {
   text-decoration: none;
   color: gray;
 }
@@ -90,25 +90,26 @@ body {
   color: #fff;
 }
 
-.container .inside .top .topRight #line1, .container .inside .top .topRight #line3{
+.container .inside .top .topRight #line1,
+.container .inside .top .topRight #line3 {
   display: inline;
   font-size: 14px;
   color: #fff;
 }
 
-.container .inside .top .topRight #line2{
+.container .inside .top .topRight #line2 {
   display: inline;
   font-size: 60px;
   font-size: 700;
 }
 
-.container .inside .middle{
+.container .inside .middle {
   width: 100%;
   height: 17.5%;
   background: rgba(255, 255, 255, 0.15);
 }
 
-.middleLeft{
+.middleLeft {
   width: 15%;
   height: 100%;
   margin-left: 2%;
@@ -119,12 +120,13 @@ body {
   font-size: 30px;
 }
 
-#startList{
+#startList {
   color: #1FDF64;
   font-size: 40px;
 }
 
-#loveList:hover, #threeDot:hover{
+#loveList:hover,
+#threeDot:hover {
   color: white;
 }
 
@@ -135,52 +137,53 @@ body {
   border-radius: 10px;
 }
 
-#col5{
+#col5 {
   width: 5%;
 }
 
-#col10{
+#col10 {
   width: 10%;
 }
 
-#col25{
+#col25 {
   width: 20%;
 }
 
-#col35{
+#col35 {
   width: 35%;
 }
 
 .container .inside .bottom td {
-  border-bottom: none; /* Loại bỏ cách gạch dưới */
+  border-bottom: none;
+  /* Loại bỏ cách gạch dưới */
   vertical-align: middle;
 }
 
-.container .inside .bottom .song{
+.container .inside .bottom .song {
   width: 100%;
   height: 70px;
 }
 
-.container .inside .bottom .song .songInfo{
+.container .inside .bottom .song .songInfo {
   width: 100%;
   height: 50px;
   display: flex;
   flex-direction: row;
 }
 
-.container .inside .bottom .song .songInfo .songImg{
+.container .inside .bottom .song .songInfo .songImg {
   width: 15%;
   height: 50px;
 }
 
-.container .inside .bottom .song .songInfo .songImg img{
+.container .inside .bottom .song .songInfo .songImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   image-rendering: crisp-edges;
 }
 
-.container .inside .bottom .song .songInfo .songDetails{
+.container .inside .bottom .song .songInfo .songDetails {
   width: 80%;
   height: 50px;
   display: flex;
@@ -188,12 +191,12 @@ body {
   margin-left: 5%;
 }
 
-.container .inside .bottom .song .songInfo .songDetails p{
+.container .inside .bottom .song .songInfo .songDetails p {
   width: 100%;
   height: 10px;
 }
 
-#col5 i{
+#col5 i {
   font-size: 16px;
   font-weight: 500;
 }
