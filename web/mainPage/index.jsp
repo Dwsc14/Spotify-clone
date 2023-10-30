@@ -7,7 +7,7 @@
     
     <body>
         <jsp:include page="header.jsp" />
-        <jsp:include page="index.jsp" />
+        <jsp:include page="container.jsp" />
         <jsp:include page="sidebar.jsp" />
         <jsp:include page="footer.jsp" />
     </body>
