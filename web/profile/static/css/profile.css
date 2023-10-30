@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.inside a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.page {
+  width: 82.5%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.space1 {
+  width: 100%;
+  height: 13%;
+}
+
+.container {
+  width: 100%;
+  height: 75%;
+  background: black;
+  overflow-y: scroll;
+}
+
+.space2 {
+  width: 100%;
+  height: 12%;
+}
+
+.container .space-inside {
+  width: 100%;
+  height: 5%;
+  background-color: black;
+}
+
+.container .inside {
+  width: 97.5%;
+  height: calc(7500%/87);
+  margin: 0 auto;
+}
+
+.container .inside .userInfo {
+  width: 100%;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 auto;
+  margin-top: 0.5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .inside .userInfo .userAva {
+  width: 20%;
+  height: 87.5%;
+  overflow: hidden;
+  margin: 0 3% 0 7.5%;
+}
+
+.container .inside .userInfo .userAva img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+}
+
+.container .inside .userInfo .userName {
+  width: 55%;
+  height: 85%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.container .inside .userInfo .userName #line1,
+.container .inside .userInfo .userName #line3 {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.container .inside .userInfo .userName #line2 {
+  color: #fff;
+  display: inline-block;
+  font-size: 70px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 5% 0;
+}
+
+.container .inside .menu {
+  width: 100%;
+  height: 65%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  margin-top: 2%;
+}
+
+.container .inside .menu .playList {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container .inside .menu .playList #type {
+  display: inline-block;
+  width: 50%;
+  height: 10%;
+  font-size: 22.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #FFF;
+  margin: 1% 0;
+  margin-left: -1%;
+}
+
+.container .inside .menu .playList .list {
+  width: 100%;
+  height: 77.5%;
+  display: flex;
+}
+
+.container .inside .menu .playList .list .index {
+  width: 17.5%;
+  height: 95%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: auto 0;
+  margin-right: 3%;
+}
+
+.container .inside .menu .playList .list .index:last-child {
+  margin-right: 0;
+}
+
+.container .inside .menu .playList .list a {
+  text-decoration: none;
+}
+
+.container .inside .menu .playList .list .index:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+}
+
+.container .inside .menu .playList .list .index .songImg,
+.container .inside .menu .playList .list .index .usersImg {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .inside .menu .playList .list .index .songImg img {
+  width: 80%;
+  height: 85%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.container .inside .menu .playList .list .index .songDetail {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nameSong {
+  margin-top: 2%;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+}
+
+#nameAuthor {
+  margin-top: 2%;
+  font-size: 12px;
+  font-weight: 400;
+  color: gray;
+}
+
+.container .inside .menu .playList .list .index .usersImg img {
+  width: 75%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
