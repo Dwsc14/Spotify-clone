@@ -1,0 +1,3 @@
+{
+    "java.project.referencedLibraries": ["lib/**/*.jar", "g:\\java\\VSCODE\\servlet-api.jar", "web/WEB-INF/lib/gson-2.10.1.jar"]
+}

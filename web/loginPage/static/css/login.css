@@ -1,0 +1,248 @@
+.emerald {
+    color: #19cc8b;
+}
+.lightGrey {
+    color: #515866;
+}
+.darkGrey {
+    color: #2a2d33;
+}
+.red {
+    color: #bc3e48;
+}
+.yellow {
+    color: #b8b136;
+}
+.font {
+    font-family: "Avenir", sans-serif;
+}
+.z {
+    z-index: 10000;
+}
+.ovlydur {
+    transition: 0.5s;
+}
+.blankImg {
+    background: url("https://s16.postimg.org/umce299tt/blank_Portrait_S_1.png?noCache=1455855743");
+}
+.plusSign {
+    background: url("https://s16.postimg.org/5rsw86ozl/plus_sign.png?noCache=1455855743");
+}
+.colin {
+    background: url("https://s16.postimg.org/dn3fmzym9/Colin_Portrait_S_1.png?noCache=1455855743");
+}
+
+.overlay {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #19cc8b;
+}
+
+.modal-wrapper {
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #2a2d33;
+    border-radius: 40px;
+    font-family: "Avenir", sans-serif;
+    color: #515866;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.profile-img {
+    position: absolute;
+    background-image: url("https://s16.postimg.org/umce299tt/blank_Portrait_S_1.png?noCache=1455855743");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 50% 113%;
+    background-color: rgba(81, 88, 102, 0.1);
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    border: 4px solid #515866;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-img.profile-pic {
+    background-image: url("https://s16.postimg.org/dn3fmzym9/Colin_Portrait_S_1.png?noCache=1455855743");
+    background-size: contain;
+}
+
+.profile-add {
+    background-image: url("https://s16.postimg.org/5rsw86ozl/plus_sign.png?noCache=1455855743");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.profile-add:hover {
+    filter: brightness(0.8);
+    transform: scale(1.2);
+}
+
+.load-gif {
+    position: absolute;
+    background: url("http://www.wallies.com/filebin/images/loading_apple.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s;
+    opacity: 0;
+}
+
+.load-gif.show {
+    opacity: 1;
+}
+
+.text-wrapper {
+    margin: 40px;
+    -webkit-font-smoothing: antialiased;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.text-wrapper.show {
+    opacity: 1;
+}
+
+.nav {
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    margin: 80px 0 25px;
+    height: 30px;
+    width: 100%;
+}
+
+.nav div {
+    -webkit-user-select: none;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #515866;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+}
+
+.nav div:hover {
+    color: rgba(81, 88, 102, 0.1);
+    border-bottom: 2px solid rgba(81, 88, 102, 0.1);
+}
+
+.nav div.selected {
+    color: #fff;
+    font-weight: 900;
+    border-bottom: 4px solid #fff;
+}
+
+.form-text {
+    margin: 30px 0;
+    height: 58px;
+    overflow: hidden;
+    transition: opacity 0.75s ease, transform 1s, all 0.25s;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.form-text.ani-hide {
+    transition: opacity 0.5s ease, transform 0.75s, height 0.25s;
+    transform: scaleY(0);
+    height: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.form-title {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0 10px 2px;
+    letter-spacing: 0.5px;
+}
+
+.content {
+    font: 500 18px/40px "Avenir", sans-serif;
+    height: 40px;
+    padding: 0 10px;
+    color: #fff;
+    background: #515866;
+    border: none;
+    width: calc(100% - 20px);
+    border-radius: 10px;
+}
+
+.content:focus {
+    outline: none;
+    background: rgba(81, 88, 102, 0.1);
+}
+
+.password .content {
+    color: #fff;
+}
+
+.forget {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: 180px;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+    padding: 3px;
+    border-bottom: 1px solid #515866;
+    cursor: pointer;
+    transition: opacity 0.5s, margin 0.5s 0.5s;
+}
+
+.forget:hover {
+    color: rgba(81, 88, 102, 0.1);
+    border-bottom: 1px solid rgba(81, 88, 102, 0.1);
+}
+
+.forget.selected {
+    transition: opacity 0.5s;
+    opacity: 1;
+    height: 0;
+    padding: 0;
+}
+
+.button {
+    color: #fff;
+    background: #19cc8b;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    font-weight: 800;
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    border: none;
+}
+
+.button:hover {
+    background: rgba(25, 204, 139, 0.85);
+}

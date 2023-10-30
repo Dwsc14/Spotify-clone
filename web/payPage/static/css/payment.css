@@ -1,0 +1,415 @@
+/* Define variables */
+/* $primary: #e67e22;
+$font: 'Lato', sans-serif; */
+
+/* Remove focus outline for all elements */
+*:focus {
+    outline: none;
+}
+
+/* Styles for the left column */
+.left {
+    width: 70%;
+    float: left;
+    clear: both;
+}
+
+/* Styles for the right column */
+.right {
+    width: 30%;
+    float: right;
+    margin-bottom: 25px;
+}
+
+/* Styles for the body */
+body {
+    background: -moz-linear-gradient(-45deg, #e67e22 0%, #f39c12 100%);
+    background: -webkit-linear-gradient(-45deg, #e67e22 0%, #f39c12 100%);
+    background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+    height: auto;
+    min-height: calc(100vh);
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+}
+
+/* Styles for the wrapper */
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+/* Styles for the container */
+#container {
+    background: white;
+    height: 70%;
+    width: 70%;
+    z-index: 1;
+    -webkit-box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 15px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the left column within the container */
+#left-col {
+    width: 52.5%;
+    height: 100%;
+    float: left;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offerCard {
+    width: 85%;
+    height: 55%;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 10px;
+}
+
+.offerCardHeader {
+    width: 100%;
+    height: 30%;
+    background: rgb(255, 210, 215);
+    color: rgb(0, 0, 0);
+    border-start-start-radius: 16px;
+    border-start-end-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+}
+
+.offerCardHeader-left h1 {
+    display: block;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: inherit;
+    margin-bottom: 4%;
+}
+
+.offerCardHeader-left h3 {
+    display: block;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: inherit;
+}
+
+.offerCardHeader-right #p1 {
+    display: block;
+    text-align: end;
+    margin-block-end: 4px;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: inherit;
+    margin-bottom: 4%;
+}
+
+.offerCardHeader-right #p2 {
+    text-align: end;
+    display: block;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: inherit;
+}
+
+.offerCardHeader-left {
+    margin-left: 3%;
+}
+
+.offerCardHeader-right {
+    margin-right: 3%;
+}
+
+.offerCardBody {
+    width: 96%;
+    height: 70%;
+    /*     border-end-start-radius: 16px;
+    border-end-end-radius: 16px; */
+    margin: 0 auto;
+}
+
+.offerCardBody #OCB1 {
+    padding-top: 3%;
+    padding-bottom: 0.5%;
+}
+
+.offerCardBody #OCB2 {
+    padding-bottom: 1.5%;
+}
+
+.offerCardBody-insde {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-block-end: 8px;
+}
+
+.offerCardBody-insde p {
+    display: block;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-weight: 600;
+    color: inherit;
+    font-size: 0.825rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.offerCardBody ul {
+    display: block;
+    list-style-type: disc;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    overflow-wrap: break-word;
+    padding-inline-start: 25px;
+}
+
+.offerCardBody .details p {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 0.725rem;
+    font-weight: 400;
+    color: inherit;
+}
+
+.offerCardBody [href] {
+    text-decoration: underline;
+}
+
+.offerCardBody a {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    color: inherit;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+/* Styles for the right column within the container */
+#right-col {
+    width: calc(47.5% - 50px);
+    min-width: 310px;
+    height: 100%;
+    margin: 20px 25px;
+    float: right;
+}
+
+/* Styles for the h2 element within the right column */
+#right-col h2 {
+    float: left;
+    margin: 6px 0 0 0;
+}
+
+/* Styles for the logotype div */
+div#logotype {
+    float: right;
+    margin: 4px 0 0 0;
+}
+
+/* Styles for images within the logotype div */
+div#logotype img {
+    width: 60px;
+    height: auto;
+}
+
+/* Styles for the Visa image within the logotype div */
+div#logotype img#visa {
+    margin-top: -10px;
+}
+
+/* Styles for the form */
+form {
+    margin: 80px auto 0;
+    width: 100%;
+}
+
+/* Styles for the card number input */
+#cardnumber {
+    background: white;
+    width: calc(100% - 14px);
+    padding: 4px 6px;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+}
+
+/* Styles for input elements within the card number input */
+#cardnumber input {
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    width: calc(25% - 23px);
+    padding: 4px 6px;
+    letter-spacing: 6px;
+    font-size: 0.9em;
+    border: none;
+    background: none;
+}
+
+/* Styles for placeholders in input elements */
+#cardnumber input::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+#cardnumber input::-moz-placeholder {
+    opacity: 0.5;
+}
+
+#cardnumber input[type=number]::-webkit-inner-spin-button,
+#cardnumber input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Styles for labels */
+label {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 14px 0 4px;
+}
+
+/* Styles for the CVC label */
+#cvc-label i {
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+/* Styles for input elements */
+input {
+    display: block;
+    padding: 6px 8px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    font-size: 0.9em;
+}
+
+/* Styles for focused input elements */
+input:focus {
+    border-color: #e67e22;
+}
+
+/* Styles for placeholders in input elements */
+input::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+input::-moz-placeholder {
+    opacity: 0.5;
+}
+
+/* Styles for the cardholder input */
+input#cardholder {
+    width: calc(100% - 18px);
+}
+
+/* Styles for the CVC input */
+input#cvc {
+    width: calc(100% - 18px);
+}
+
+/* Styles for select elements */
+select {
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    background: none;
+    width: 90px;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 6px 8px;
+    color: rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Styles for buttons */
+button {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 0;
+    font-size: 0.8em;
+}
+
+/* Styles for the purchase button */
+button#purchase {
+    background: #e67e22;
+    color: white;
+    margin: 0 0 8px;
+    font-size: 0.9em;
+}
+
+/* Styles for the PayPal button */
+button#paypal {
+    background: none;
+    border: 1px solid lightgrey;
+}
+
+button#paypal:hover {
+    background: #003087;
+    border-color: #003087;
+    color: white;
+}
+
+button#paypal i {
+    color: #003087;
+}
+
+/* Styles for the support paragraph */
+p#support {
+    font-size: 0.7em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for links within the support paragraph */
+p#support a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0 1px 2px 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+p#support a:hover {
+    padding-bottom: 3px;
+}
+
+/* Styles for the dailyui element */
+#dailyui {
+    position: fixed;
+    font-size: 15em;
+    font-weight: 700;
+    margin: 0 0 -55px 0;
+    padding: 0;
+    right: 0;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    text-align: right;
+    font-family: 'proxima-nova', 'Lato', sans-serif;
+}
