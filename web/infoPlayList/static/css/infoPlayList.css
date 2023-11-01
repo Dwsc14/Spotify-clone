@@ -100,7 +100,7 @@ body {
 .container .inside .top .topRight #line2 {
   display: inline;
   font-size: 60px;
-  font-size: 700;
+  font-weight: 700;
 }
 
 .container .inside .middle {
@@ -134,7 +134,6 @@ body {
   width: 100%;
   height: auto;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
 }
 
 #col5 {
