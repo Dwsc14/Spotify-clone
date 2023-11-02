@@ -1,6 +1,7 @@
 package com.Controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -62,7 +63,7 @@ public class LoginController extends HttpServlet {
                 try {
                     userDao.insertUser(user);
                 } catch (Exception ex) {
-                    // Handle the exception properly
+                    
                 }
 
             } else {
@@ -78,18 +79,15 @@ public class LoginController extends HttpServlet {
 
                 if (user != null && verifyPassword(pswd, user.getSalt(), user.getPassword())) {
                     session.setAttribute("User", user);
+                    
+                    response.sendRedirect("HomeController");
 
-                    List<Song> songs = dao.getSongbyNum(5);
-
-                    request.setAttribute("Recommend", songs);
-
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("demo_test/index.jsp");
-                    dispatcher.forward(request, response);
                 } else {
-                    // Handle invalid login credentials
+                    System.out.println("Saiiii");
                 }
             } catch (Exception ex) {
-                // Handle the exception properly
+                PrintWriter out = response.getWriter();
+                out.print(ex);
             }
         }
     }

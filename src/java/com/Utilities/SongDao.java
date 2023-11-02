@@ -18,6 +18,34 @@ public class SongDao {
         userDao = new UserDao();
     }
 
+    public Song getSongById(int id){
+        Song song = null;
+
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "select * from Songs where SongID = ?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, id);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                User user = userDao.getUserById(rs.getString("ArtistID"));
+                song = new Song(rs.getInt("SongID"), rs.getString("title"),user ,rs.getString("FilePath"), rs.getString("ImagePath"));
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return song;
+    }
+
     public List<Song> getSongbyNum(int limit) {
         List<Song> songs = new ArrayList<>();
         Connection myConn = null;

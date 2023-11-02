@@ -46,6 +46,10 @@ public class Playlist {
         songs.remove(song);
     }
 
+    public int getSize() {
+        return songs.size();
+    }
+
     @Override
     public String toString() {
         return "Playlist{" +

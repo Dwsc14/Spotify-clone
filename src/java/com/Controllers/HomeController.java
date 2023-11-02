@@ -1,40 +1,85 @@
 package com.Controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.Models.Playlist;
 import com.Models.Song;
+import com.Models.User;
+import com.Utilities.PlaylistDao;
 import com.Utilities.SongDao;
+import com.Utilities.UserDao;
 
 public class HomeController extends HttpServlet {
 
     SongDao dao;
+    PlaylistDao pldao;
     HttpSession session = null;
+
+     public void init() throws ServletException {
+        super.init();
+        try {
+            dao = new SongDao();
+            pldao = new PlaylistDao();
+        } catch (Exception exc) {
+            throw new ServletException(exc);
+        }
+    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         session = request.getSession();
         try {
+            User user = (User) session.getAttribute("User");
+
+            if (user != null) {
+                Map<Integer, Playlist> plist;
+                if (session.getAttribute("playlist") == null){
+                   plist = pldao.getPlistById(user.getUserId());
+                } else {
+                    plist = (Map<Integer, Playlist>) session.getAttribute("playlist");
+                }
+                session.setAttribute("playlist", plist);
+            }
+
             List<Song> songs = (List<Song>) dao.getSongbyNum(5);
-            session = request.getSession();
+
+            request.setAttribute("Recommend", songs);
             
-            session.setAttribute("Recommend", songs);
-            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("demo_test/index.jsp");
+            dispatcher.forward(request, response);
+
         } catch (Exception e) {
+            PrintWriter out = response.getWriter();
+            out.print(e);
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        session = request.getSession();
+        User user = (User) session.getAttribute("User");
+        if (user != null) {
+            try {
+                processRequest(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            response.sendRedirect("demo_test/login.jsp");
+        };
     }
 
 
