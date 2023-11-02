@@ -12,6 +12,30 @@
 </head>
 
 <body>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <p id="addSong">Add to playlist</p>
+        <p id="removeSong">Remove to playlist</p>
+    </div>
+
+    <div class="popup1" id="">
+        <p>Create playlist</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+        <p>My Playlist #1</p>
+    </div>
+
+    <div class="popup2" id="">
+        <p>My Playlist #1</p>
+    </div>
+
     <div class="page">
         <div class="space1"></div>
 
@@ -43,10 +67,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" id="col5">#</th>
-                                <th scope="col" id="col35">Title</th>
-                                <th scope="col" id="col35">Album</th>
+                                <th scope="col" id="col30">Title</th>
+                                <th scope="col" id="col30">Album</th>
                                 <th scope="col" id="col20">Date added</th>
                                 <th scope="col" id="col5"><i class="bi bi-clock"></i></th>
+                                <th scope="col" id="col10"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,6 +91,9 @@
                                 <td><a href="">Still Life</a></td>
                                 <td></td>
                                 <td>3:08</td>
+                                <td>
+                                    <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
+                                </td>
                             </tr>
                             <tr class="song">
                                 <td scope="row">2</td>
@@ -83,6 +111,9 @@
                                 <td><a href="">Kwon Jiyong</a></td>
                                 <td></td>
                                 <td>3:49</td>
+                                <td>
+                                    <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -90,13 +121,92 @@
 
                 <div class="space-inside"></div>
             </div>
-
-
-
         </div>
-
         <div class="space2"></div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var likeButtons = document.querySelectorAll(".btn-like");
+            var popup = document.getElementById("popup");
+            var popup1 = document.querySelector(".popup1");
+            var popup2 = document.querySelector(".popup2");
+            var overlay = document.getElementById("overlay");
+            var popup1Visible = false;
+            var popup2Visible = false;
+
+            likeButtons.forEach(function (button) {
+                button.addEventListener("click", function (event) {
+                    var isChangeColor = event.currentTarget.classList.contains("change-color");
+
+                    if (isChangeColor) {
+                        // Đóng popup và thay đổi màu của btn-like
+                        closePopup();
+                    } else {
+                        // Hiển thị popup và lớp overlay
+                        popup.style.display = "block";
+                        overlay.style.display = "block";
+
+                        // Khi popup hiển thị, đóng băng màn hình nền bằng cách ngăn scroll
+                        document.body.style.overflow = "hidden";
+
+                        // Thay đổi màu của btn-like
+                        event.currentTarget.classList.add("change-color");
+                    }
+                });
+            });
+
+            // Hàm để đóng popup và thay đổi màu btn-like
+            function closePopup() {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+                document.body.style.overflow = "auto";
+
+                // Thay đổi màu của btn-like
+                likeButtons.forEach(function (button) {
+                    button.classList.remove("change-color");
+                });
+
+                // Đóng popup1 nếu nó đang hiển thị
+                if (popup1Visible) {
+                    popup1.style.display = "none";
+                    popup1Visible = false;
+                }
+
+                // Đóng popup2 nếu nó đang hiển thị
+                if (popup2Visible) {
+                    popup2.style.display = "none";
+                    popup2Visible = false;
+                }
+            }
+
+            overlay.addEventListener("click", function (event) {
+                // Kiểm tra xem người dùng có ấn vào overlay (ngoài popup) không
+                if (event.target === overlay) {
+                    closePopup();
+                }
+            });
+
+            // Xử lý khi nhấn vào "Add to playlist"
+            var addSong = document.getElementById("addSong");
+            addSong.addEventListener("click", function () {
+                popup1.style.display = "block";
+                popup1Visible = true;
+                popup2.style.display = "none";
+                popup2Visible = false;
+            });
+
+            // Xử lý khi nhấn vào "Remove to playlist"
+            var removeSong = document.getElementById("removeSong");
+            removeSong.addEventListener("click", function () {
+                popup2.style.display = "block";
+                popup2Visible = true;
+                popup1.style.display = "none";
+                popup1Visible = false;
+            });
+
+        });
+    </script>
 </body>
 
 </html>
