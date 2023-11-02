@@ -1,35 +1,21 @@
-.emerald {
-    color: #19cc8b;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
 }
-.lightGrey {
-    color: #515866;
+
+body {
+    width: 100%;
+    height: 100vh;
 }
-.darkGrey {
-    color: #2a2d33;
-}
-.red {
-    color: #bc3e48;
-}
-.yellow {
-    color: #b8b136;
-}
-.font {
-    font-family: "Avenir", sans-serif;
-}
-.z {
-    z-index: 10000;
-}
-.ovlydur {
-    transition: 0.5s;
-}
-.blankImg {
-    background: url("https://s16.postimg.org/umce299tt/blank_Portrait_S_1.png?noCache=1455855743");
-}
-.plusSign {
-    background: url("https://s16.postimg.org/5rsw86ozl/plus_sign.png?noCache=1455855743");
-}
-.colin {
-    background: url("https://s16.postimg.org/dn3fmzym9/Colin_Portrait_S_1.png?noCache=1455855743");
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: #19cc8b;
 }
 
 .overlay {
@@ -39,7 +25,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #19cc8b;
 }
 
 .modal-wrapper {
@@ -49,6 +34,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
+    height: 500px;
     background-color: #2a2d33;
     border-radius: 40px;
     font-family: "Avenir", sans-serif;
@@ -56,82 +42,21 @@
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
 }
 
-.profile-img {
-    position: absolute;
-    background-image: url("https://s16.postimg.org/umce299tt/blank_Portrait_S_1.png?noCache=1455855743");
-    background-repeat: no-repeat;
-    background-size: 90%;
-    background-position: 50% 113%;
-    background-color: rgba(81, 88, 102, 0.1);
-    border-radius: 50%;
-    width: 110px;
-    height: 110px;
-    border: 4px solid #515866;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.profile-img.profile-pic {
-    background-image: url("https://s16.postimg.org/dn3fmzym9/Colin_Portrait_S_1.png?noCache=1455855743");
-    background-size: contain;
-}
-
-.profile-add {
-    background-image: url("https://s16.postimg.org/5rsw86ozl/plus_sign.png?noCache=1455855743");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.profile-add:hover {
-    filter: brightness(0.8);
-    transform: scale(1.2);
-}
-
-.load-gif {
-    position: absolute;
-    background: url("http://www.wallies.com/filebin/images/loading_apple.gif");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.25s;
-    opacity: 0;
-}
-
-.load-gif.show {
-    opacity: 1;
-}
-
 .text-wrapper {
-    margin: 40px;
+    margin: 0 40px;
     -webkit-font-smoothing: antialiased;
-    opacity: 0;
     transition: opacity 0.25s;
 }
 
-.text-wrapper.show {
+.text-wrapper .show {
     opacity: 1;
 }
 
-.nav {
-    font-size: 21px;
-    font-weight: 600;
+.text-wrapper .nav {
+    font-size: 20px;
+    font-weight: 700;
     text-align: center;
-    margin: 80px 0 25px;
+    margin: 35px 0 30px;
     height: 30px;
     width: 100%;
 }
@@ -150,14 +75,14 @@
     border-bottom: 2px solid rgba(81, 88, 102, 0.1);
 }
 
-.nav div.selected {
+.nav .selected {
     color: #fff;
     font-weight: 900;
-    border-bottom: 4px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
-.form-text {
-    margin: 30px 0;
+form {
+    margin-bottom: 15px;
     height: 58px;
     overflow: hidden;
     transition: opacity 0.75s ease, transform 1s, all 0.25s;
@@ -165,7 +90,15 @@
     transform: scaleY(1);
 }
 
-.form-text.ani-hide {
+#first-form {
+    margin-top: 35px;
+}
+
+#last-form {
+    margin-bottom: 27.5px;
+}
+
+form.ani-hide {
     transition: opacity 0.5s ease, transform 0.75s, height 0.25s;
     transform: scaleY(0);
     height: 0;
@@ -197,13 +130,74 @@
     background: rgba(81, 88, 102, 0.1);
 }
 
+.security {
+    position: absolute;
+    transform: translateY(5px);
+    right: -5px;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.security-type {
+    z-index: 10001;
+    text-align: center;
+    line-height: 90%;
+    color: #19cc8b;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -40%);
+}
+
+.security-level {
+    font-weight: 900;
+}
+
+.secure {
+    font-weight: 300;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .password .content {
     color: #fff;
 }
 
+.circle {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: background 0.25s ease;
+    transform: translate(-50%, -50%);
+}
+
+.circle.background {
+    z-index: 9999;
+    background: #19cc8b;
+}
+
+.circle.fill {
+    z-index: 10000;
+}
+
+.circle.cover {
+    z-index: 10000;
+    background: #2a2d33;
+    width: 50px;
+    height: 50px;
+}
+
 .forget {
     text-align: center;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
     text-transform: uppercase;
     width: 180px;
@@ -216,11 +210,11 @@
 }
 
 .forget:hover {
-    color: rgba(81, 88, 102, 0.1);
-    border-bottom: 1px solid rgba(81, 88, 102, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.forget.selected {
+.forget .selected {
     transition: opacity 0.5s;
     opacity: 1;
     height: 0;
@@ -230,7 +224,7 @@
 .button {
     color: #fff;
     background: #19cc8b;
-    margin: 0 auto 20px;
+    margin: 15px auto 12.5px;
     border-radius: 10px;
     font-weight: 800;
     width: 170px;
@@ -240,9 +234,19 @@
     display: block;
     cursor: pointer;
     transition: background 0.25s ease;
-    border: none;
 }
 
 .button:hover {
     background: rgba(25, 204, 139, 0.85);
+}
+
+.text,
+.text a,
+.icons a {
+    color: #fff;
+}
+
+.text a:hover,
+.icons a:hover {
+    color: #515866;
 }

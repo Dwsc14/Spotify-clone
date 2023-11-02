@@ -12,16 +12,12 @@ function toLogin() {
     document.querySelectorAll(".security").forEach(function (element) {
         element.classList.add("hide");
     });
-    document.querySelectorAll(".full-name, .retype").forEach(function (inputElement) {
-        inputElement.classList.add("ani-hide");
+    document.querySelectorAll(".full-name, .retype").forEach(function (element) {
+        element.classList.add("ani-hide");
     });
     document.querySelectorAll(".password, .password div").forEach(function (element) {
         element.classList.remove("ani-hide");
     });
-
-    document.querySelector('input.content[name="full_name"]').value = "";
-    document.querySelector('input.content[name="repswd"]').value = "";
-
     login.classList.add("selected");
     signup.classList.remove("selected");
     forget.style.display = "block";
@@ -33,7 +29,6 @@ function toSignup() {
     document.querySelectorAll(".full-name, .retype, .password").forEach(function (element) {
         element.classList.remove("ani-hide");
     });
-
     signup.classList.add("selected");
     login.classList.remove("selected");
     forget.style.display = "none";
