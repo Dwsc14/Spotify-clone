@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+:root {
+    --primary: #FFAB40;
+    --secondary:  rgba(255, 204, 128,1.0);
+}
 
 * {
     padding: 0%;
@@ -52,7 +56,7 @@ body {
 .container .inside .advertise {
     width: 100%;
     height: 40%;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--primary);
     border-radius: 10px;
     margin: 0 auto;
     margin-top: 0.5%;
@@ -84,7 +88,7 @@ body {
 
 .container .inside .advertise .right h5 {
     width: 95%;
-    color: #fff;
+    color: black;
     margin: 0 0 0 0;
     text-decoration: none;
 }
@@ -94,7 +98,7 @@ body {
     width: 95%;
     font-size: 47.5px;
     font-weight: 600;
-    color: #fff;
+    color: black;
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
@@ -105,8 +109,8 @@ body {
     display: inline-block;
     width: 95%;
     font-size: 14px;
-    font-weight: 400;
-    color: #fff;
+    font-weight: 500;
+    color: black;
     text-decoration: none;
     margin-bottom: 0.5%;
     white-space: nowrap;
@@ -119,7 +123,7 @@ body {
     height: 25%;
     font-size: 15px;
     font-weight: 500;
-    border: 1.5px solid #fff;
+    border: 2px solid rgba(255, 204, 128,1.0);
     border-radius: 20px;
     background: black;
     color: white;
@@ -127,9 +131,6 @@ body {
 }
 
 #playButton {
-    border: none;
-    background: #1FDF64;
-    color: black;
     margin-right: 3%;
 }
 
@@ -139,7 +140,7 @@ body {
 
 .container .inside .advertise .right i {
     font-size: 25px;
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
@@ -234,6 +235,6 @@ body {
 #nameAuthor {
     margin-top: 2%;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
     color: gray;
 }

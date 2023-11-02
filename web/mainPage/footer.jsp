@@ -1,39 +1,40 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="./static/css/footer.css">
+<link rel="stylesheet" href="static/css/footer.css">
 
 <body>
     <footer>
         <div class="playBack">
-            <div class="wave">
-                <div class="wave1"></div>
-                <div class="wave1"></div>
-                <div class="wave1"></div>
+            <div class="playBack-left">
+                <div class="songPlaying">
+                    <div class="songPlaying-space"></div>
+                    <div class="songPlaying-img">
+                        <img src="static/img/blackpink.jpg" alt="">
+                    </div>
+                    <div class="songPlaying-details">
+                        <a href="" id="songPlaying-details-name">Hope Not</a>
+                        <a href="" id="songPlaying-details-author">BlackPink</a>
+                    </div>
+                    <div class="songPlaying-space"></div>
+                </div>
             </div>
-            <img src="static/img/blackpink.jpg" alt="blackpink">
-            <h5>
-                Kill This Love
-                <div class="subtitle">BlackPink</div>
-            </h5>
-            <div class="icon">
-                <i class="bi bi-skip-start-fill"></i>
-                <i class="bi bi-play-fill"></i>
-                <i class="bi bi-skip-end-fill"></i>
-            </div>
-            <span id="currentStart">0.00</span>
-            <div class="bar">
-                <input type="range" id="seek" min="0" value="0" max="100">
-                <div class="bar2" id="bar2"></div>
-                <div class="dot"></div>
-            </div>
-            <span id="currentEnd">0.00</span>
+            <div class="playBack-mid">
+                <div class="playBack-control">
+                    <div class="playBack-control-space"></div>
+                    <div class="playBack-control-button">
+                        <a href=""><i class="bi bi-skip-start-fill"></i></a>
+                        <a href=""><i class="bi bi-play-circle-fill"></i></a>
+                        <a href=""><i class="bi bi-skip-end-fill"></i></a>
+                    </div>
+                    <div class="playBack-control-space"></div>
+                </div>
 
-            <div class="vol">
-                <i class="bi bi-volume-down-fill"></i>
-                <input type="range" id="vol" min="0" value="30" max="100">
-                <div class="vol_bar"></div>
-                <div class="dot" id="vol_dot"></div>
+                <div class="playBack-bar">
+                    <span>00:00</span>
+                    <input type="range" value="0" class="seek-bar">
+                    <span>00:00</span>
+                </div>
             </div>
+            <div class="playBack-right"></div>
         </div>
     </footer>
-    <script src="static/js/footer.js"></script>
 </body>
