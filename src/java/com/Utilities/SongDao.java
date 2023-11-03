@@ -46,6 +46,34 @@ public class SongDao {
         return song;
     }
 
+    public List<Song> getRandomSongbyNum(int limit) {
+        List<Song> songs = new ArrayList<>();
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT * FROM songs ORDER BY RAND() LIMIT ?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, limit);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                User user = userDao.getUserById(rs.getString("ArtistID"));
+                Song song = new Song(rs.getInt("SongID"), rs.getString("Title"), user, rs.getString("FilePath"), rs.getString("ImagePath"));
+                songs.add(song);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return songs;
+    }
+
+
     public List<Song> getSongbyNum(int limit) {
         List<Song> songs = new ArrayList<>();
         Connection myConn = null;

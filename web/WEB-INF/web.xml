@@ -22,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
-        <url-pattern>/HomeController</url-pattern>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MusicController</servlet-name>
@@ -38,7 +38,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
-        <url-pattern>/LoginController</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -46,7 +46,8 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>loginPage/login.html</welcome-file>
-        <welcome-file>demo_test/login.html</welcome-file>
+        <welcome-file>loginPage/login.jsp</welcome-file>
     </welcome-file-list>
+    <jsp-config>
+    </jsp-config>
 </web-app>

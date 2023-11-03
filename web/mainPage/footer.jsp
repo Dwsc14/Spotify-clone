@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="static/css/footer.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="mainPage/static/css/footer.css" />
 
 <body>
     <footer>
@@ -8,7 +8,7 @@
                 <div class="songPlaying">
                     <div class="songPlaying-space"></div>
                     <div class="songPlaying-img">
-                        <img src="static/img/blackpink.jpg" alt="">
+                        <img src="mainPage/static/img/blackpink.jpg" alt="" />
                     </div>
                     <div class="songPlaying-details">
                         <a href="" id="songPlaying-details-name">Hope Not</a>
@@ -30,7 +30,7 @@
 
                 <div class="playBack-bar">
                     <span>00:00</span>
-                    <input type="range" value="0" class="seek-bar">
+                    <input type="range" value="0" class="seek-bar" />
                     <span>00:00</span>
                 </div>
             </div>

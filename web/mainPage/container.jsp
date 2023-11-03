@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="static/css/container.css" />
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="mainPage/static/css/container.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
 <body>
@@ -9,7 +10,7 @@
             <div class="inside">
                 <div class="advertise">
                     <div class="left">
-                        <a href=""><img src="static/img/exo.jpg" alt="" /></a>
+                        <a href=""><img src="mainPage/static/img/exo.jpg" alt="" /></a>
                     </div>
 
                     <div class="right">
@@ -28,7 +29,7 @@
                         <div class="list">
                             <a href="#" class="song">
                                 <div class="songImg">
-                                    <img src="static/img/bigbang.jpg" alt="" />
+                                    <img src="mainPage/static/img/bigbang.jpg" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">Bang Bang Bang</p>
@@ -38,7 +39,7 @@
 
                             <a href="#" class="song">
                                 <div class="songImg">
-                                    <img src="static/img/nct.jpg" alt="" />
+                                    <img src="mainPage/static/img/nct.jpg" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">Glitch Mode</p>
@@ -48,7 +49,7 @@
 
                             <a href="#" class="song">
                                 <div class="songImg">
-                                    <img src="static/img/blackpink.jpg" alt="" />
+                                    <img src="mainPage/static/img/blackpink.jpg" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">Boombayah</p>
@@ -58,7 +59,7 @@
 
                             <a href="#" class="song">
                                 <div class="songImg">
-                                    <img src="static/img/exo.jpg" alt="" />
+                                    <img src="mainPage/static/img/exo.jpg" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">Love Shot</p>
@@ -68,7 +69,7 @@
 
                             <a href="#" class="song">
                                 <div class="songImg">
-                                    <img src="static/img/bts.jpg" alt="" />
+                                    <img src="mainPage/static/img/bts.jpg" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">Love Yourself</p>
@@ -81,114 +82,38 @@
 
                 <div class="menu">
                     <div class="playList">
-                        <p id="type">Made For User</p>
+                        <p id="type">Random Song You Might Enjoy</p>
                         <div class="list">
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/bigbang.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Bang Bang Bang</p>
-                                    <p id="nameAuthor">Big Bang</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/nct.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Glitch Mode</p>
-                                    <p id="nameAuthor">NCT</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/blackpink.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Boombayah</p>
-                                    <p id="nameAuthor">BlackPink</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/exo.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Love Shot</p>
-                                    <p id="nameAuthor">EXO</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/bts.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Love Yourself</p>
-                                    <p id="nameAuthor">BTS</p>
-                                </div>
-                            </a>
+                            <c:forEach items="${Random}" var="song">
+                                <a href="#" class="song">
+                                    <div class="songImg">
+                                        <img src=".${song.imagePath}" alt="" />
+                                    </div>
+                                    <div class="songDetail">
+                                        <p id="nameSong">${song.title}</p>
+                                        <p id="nameAuthor">${song.getUser().getFullName()}</p>
+                                    </div>
+                                </a>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
 
                 <div class="menu">
                     <div class="playList">
-                        <p id="type">Recommended For Today</p>
+                        <p id="type">Latest Songs</p>
                         <div class="list">
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/bigbang.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Bang Bang Bang</p>
-                                    <p id="nameAuthor">Big Bang</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/nct.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Glitch Mode</p>
-                                    <p id="nameAuthor">NCT</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/blackpink.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Boombayah</p>
-                                    <p id="nameAuthor">BlackPink</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/exo.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Love Shot</p>
-                                    <p id="nameAuthor">EXO</p>
-                                </div>
-                            </a>
-
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src="static/img/bts.jpg" alt="" />
-                                </div>
-                                <div class="songDetail">
-                                    <p id="nameSong">Love Yourself</p>
-                                    <p id="nameAuthor">BTS</p>
-                                </div>
-                            </a>
+                            <c:forEach items="${Recommend}" var="song">
+                                <a href="#" class="song">
+                                    <div class="songImg">
+                                        <img src=".${song.imagePath}" alt="" />
+                                    </div>
+                                    <div class="songDetail">
+                                        <p id="nameSong">${song.title}</p>
+                                        <p id="nameAuthor">${song.getUser().getFullName()}</p>
+                                    </div>
+                                </a>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>

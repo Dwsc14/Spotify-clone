@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="static/css/sidebar.css" />
+<link rel="stylesheet" href="mainPage/static/css/sidebar.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
 <body>
@@ -39,50 +39,16 @@
                 </div>
 
                 <div class="menu_song">
-                    <div class="songItem">
-                        <div class="songImg">
-                            <a href=""><img src="static/img/bigbang.jpg" alt="BigBang" /></a>
+                    <c:forEach items="${sessionScope.playlist}" var="playlistItem">
+                        <div class="songItem">
+                            <div class="songImg">
+                                <a href=""><img src="mainPage/static/img/bigbang.jpg" alt="BigBang" /></a>
+                            </div>
+                            <div class="songDetails">
+                                <a href="ProfileController?playlist=${playlistItem.value.id}">${playlistItem.value.title}</a>
+                            </div>
                         </div>
-                        <div class="songDetails">
-                            <a href="">Bang Bang Bang</a>
-                        </div>
-                    </div>
-
-                    <div class="songItem">
-                        <div class="songImg">
-                            <a href=""><img src="static/img/bigbang.jpg" alt="BigBang" /></a>
-                        </div>
-                        <div class="songDetails">
-                            <a href="">Bang Bang Bang</a>
-                        </div>
-                    </div>
-
-                    <div class="songItem">
-                        <div class="songImg">
-                            <a href=""><img src="static/img/bigbang.jpg" alt="BigBang" /></a>
-                        </div>
-                        <div class="songDetails">
-                            <a href="">Bang Bang Bang</a>
-                        </div>
-                    </div>
-
-                    <div class="songItem">
-                        <div class="songImg">
-                            <a href=""><img src="static/img/bigbang.jpg" alt="BigBang" /></a>
-                        </div>
-                        <div class="songDetails">
-                            <a href="">Bang Bang Bang</a>
-                        </div>
-                    </div>
-
-                    <div class="songItem">
-                        <div class="songImg">
-                            <a href=""><img src="static/img/bigbang.jpg" alt="BigBang" /></a>
-                        </div>
-                        <div class="songDetails">
-                            <a href="">Bang Bang Bang</a>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
 
@@ -90,15 +56,5 @@
         </div>
     </div>
 
-    <script>
-        const searchIcon = document.getElementById("search-icon");
-        const searchInput = document.getElementById("search-input");
-        const recentText = document.getElementById("recent");
-
-        searchIcon.addEventListener("click", function () {
-            searchInput.classList.toggle("hidden");
-            searchInput.focus();
-        });
-
-    </script>
+    <script src="mainPage/static/js/sidebar.js"></script>
 </body>

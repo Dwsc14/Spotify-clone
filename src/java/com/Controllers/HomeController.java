@@ -25,7 +25,7 @@ public class HomeController extends HttpServlet {
     PlaylistDao pldao;
     HttpSession session = null;
 
-     public void init() throws ServletException {
+    public void init() throws ServletException {
         super.init();
         try {
             dao = new SongDao();
@@ -52,11 +52,14 @@ public class HomeController extends HttpServlet {
                 session.setAttribute("playlist", plist);
             }
 
-            List<Song> songs = (List<Song>) dao.getSongbyNum(5);
+            List<Song> recommend_songs = (List<Song>) dao.getSongbyNum(5);
+            List<Song> random_songs = (List<Song>) dao.getRandomSongbyNum(5);
 
-            request.setAttribute("Recommend", songs);
-            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("demo_test/index.jsp");
+
+            request.setAttribute("Recommend", recommend_songs);
+            request.setAttribute("Random", random_songs);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("mainPage/index.jsp");
             dispatcher.forward(request, response);
 
         } catch (Exception e) {
@@ -78,7 +81,7 @@ public class HomeController extends HttpServlet {
                 e.printStackTrace();
             }
         } else {
-            response.sendRedirect("demo_test/login.jsp");
+            response.sendRedirect("login");
         };
     }
 

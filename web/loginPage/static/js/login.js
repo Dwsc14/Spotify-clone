@@ -64,3 +64,14 @@ signup.addEventListener("click", function () {
 forget.addEventListener("click", function () {
     toForget();
 });
+
+var statusElement = document.getElementById("status");
+var status = statusElement.value;
+
+if (status === "fail") {
+    showSweetAlert();
+}
+
+function showSweetAlert() {
+    Swal.fire("SweetAlert2 is working!");
+}

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap");
 
 * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 .overlay {
-    z-index: 9999;
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@ body {
 }
 
 .modal-wrapper {
-    z-index: 10000;
+    z-index: 11;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -81,7 +81,7 @@ body {
     border-bottom: 2px solid #fff;
 }
 
-form {
+.form {
     margin-bottom: 15px;
     height: 58px;
     overflow: hidden;
@@ -98,7 +98,7 @@ form {
     margin-bottom: 27.5px;
 }
 
-form.ani-hide {
+.form.ani-hide {
     transition: opacity 0.5s ease, transform 0.75s, height 0.25s;
     transform: scaleY(0);
     height: 0;
@@ -234,6 +234,7 @@ form.ani-hide {
     display: block;
     cursor: pointer;
     transition: background 0.25s ease;
+    border: none;
 }
 
 .button:hover {

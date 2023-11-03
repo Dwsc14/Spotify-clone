@@ -7,7 +7,8 @@ public class Playlist {
     private int id;
     private String title;
     private List<Song> songs;
-
+    // private String ImagePath;
+    
     public Playlist() {
         songs = new ArrayList<>();
     }
@@ -16,6 +17,7 @@ public class Playlist {
         this.id = id;
         this.title = title;
         this.songs = new ArrayList<>(songs);
+        // this.ImagePath = ImagePath;
     }
 
     public int getId() {
@@ -50,6 +52,8 @@ public class Playlist {
         return songs.size();
     }
 
+
+
     @Override
     public String toString() {
         return "Playlist{" +
@@ -58,4 +62,5 @@ public class Playlist {
                 ", songs=" + songs +
                 '}';
     }
+    
 }

@@ -67,7 +67,7 @@ public class LoginController extends HttpServlet {
                 }
 
             } else {
-                // Handle password mismatch
+                
             }
 
         } else {
@@ -79,11 +79,12 @@ public class LoginController extends HttpServlet {
 
                 if (user != null && verifyPassword(pswd, user.getSalt(), user.getPassword())) {
                     session.setAttribute("User", user);
-                    
-                    response.sendRedirect("HomeController");
+                    response.sendRedirect("home");
 
                 } else {
-                    System.out.println("Saiiii");
+                    request.setAttribute("status", "fail");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/loginPage/login.jsp");
+                    dispatcher.forward(request, response);
                 }
             } catch (Exception ex) {
                 PrintWriter out = response.getWriter();
@@ -164,7 +165,7 @@ public class LoginController extends HttpServlet {
                 // Handle the exception properly
             }
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("loginPage/login.html");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("loginPage/login.jsp");
             dispatcher.forward(request, response);
         }
     }
