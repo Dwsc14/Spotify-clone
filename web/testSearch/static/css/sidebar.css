@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 17.5%;
+    height: 100%;
+    background-color: black;
+    /* flex-wrap: wrap; */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar .inside {
+    width: 92.5%;
+    height: 88%;
+    padding-top: 10%;
+}
+
+.sidebar .inside .top {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 5px 0 5px 5px;
+}
+
+.sidebar .inside .top .icon {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .inside .top .bi {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar .inside .top .icon_text {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .inside .top span {
+    margin: 10px 0 10px 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar .inside .middle {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    margin-top: 10%;
+    background: #FFAB40;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left: 5px;
+    color: black;
+}
+
+.sidebar .inside .middle .left_middle {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .inside .middle .left_middle .bi {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.sidebar .inside .middle .right_middle {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .inside .middle .right_middle .bi {
+    font-size: 32.5px;
+    cursor: pointer;
+}
+
+.sidebar .inside .middle span {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 18px 0 3px;
+    cursor: pointer;
+}
+
+.sidebar .inside .bottom .search_bar {
+    width: 87.5%;
+    height: 12.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.sidebar .inside .bottom .search_bar .bi {
+    font-size: 17.5px;
+    color: #A7A7A7;
+    cursor: pointer;
+}
+
+.sidebar .inside .bottom .search_bar input {
+    background-color: #2A2A2A;
+    width: 75%;
+    height: 25px;
+    margin-left: 3px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 3px;
+}
+
+.sidebar .inside .bottom .search_bar #search-input::placeholder {
+    font-size: 13px;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.sidebar .inside .bottom .search_bar span {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inside .bottom {
+    width: 100%;
+    height: 63.8%;
+    background: #212529;
+    overflow-y: scroll;
+}
+
+.inside .bottom .menu_song {
+    width: 100%;
+    height: 87.5%;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.inside .bottom .menu_song .songItem {
+    width: 92.5%;
+    height: 25%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.inside .bottom .menu_song .songItem .songImg {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside .bottom .menu_song .songItem img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.inside .bottom .menu_song .songItem .songDetails {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside .bottom .menu_song .songItem a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
