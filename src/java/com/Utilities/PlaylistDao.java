@@ -111,15 +111,24 @@ public class PlaylistDao {
         }
     }
 
-    public void addSongToPlaylist(int playlistID, int songID) throws Exception {
-        String sql = "INSERT INTO Playlistsongs(PlaylistID, SongID) VALUES (?, ?)";
-        try (Connection myConn = db.getConnection();
-             PreparedStatement myStmt = myConn.prepareStatement(sql)) {
+    public void addSongToPlaylist(int playlistID, int songID){
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+        
+        try {
+            myConn = db.getConnection();
+            String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
+
+            myStmt = myConn.prepareStatement(sql);
             myStmt.setInt(1, playlistID);
             myStmt.setInt(2, songID);
             myStmt.executeUpdate();
-        } catch (SQLException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
         }
     }
 

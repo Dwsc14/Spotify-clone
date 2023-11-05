@@ -1,3 +1,4 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <header>
     <div class="head-bar">
         <div class="left">
@@ -12,10 +13,20 @@
         <div class="right">
             <nav>
                 <button>Explore Premium</button>
-                <i class="bi bi-bell"></i>
-                <div class="user-profile">
-                    <img src="${sessionScope.User.getImg()}" alt="" />
-                </div>
+
+                <c:if test="${sessionScope.User != null}">
+                    <i class="bi bi-bell"></i>
+                    <div class="user-profile">
+                        <img src="${sessionScope.User.getImg()}" alt="" />
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.User == null}">
+                    <form action="login">
+                        <button style="width: 80px; height: 33px; margin-left: 10px; background-color: #ffab40; cursor: pointer !important">
+                            Login
+                        </button>
+                    </form>
+                </c:if>
             </nav>
         </div>
     </div>

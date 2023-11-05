@@ -18,10 +18,8 @@
     </head>
 
     <body>
-        <jsp:include page="../include/header.jsp" />
         <jsp:include page="infoPlayList.jsp" />
         <jsp:include page="../include/sidebar.jsp" />
-        <jsp:include page="../include/footer.jsp" />
 
         <script src="static/js/sidebar.js"></script>
         <script src="static/js/header.js"></script>
