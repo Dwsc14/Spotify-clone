@@ -34,7 +34,7 @@ public class SongDao {
             rs = myStmt.executeQuery();
 
             while (rs.next()) {
-                User user = userDao.getUserById(rs.getString("ArtistID"));
+                User user = userDao.getUserById(rs.getString("ArtistID"), true);
                 song = new Song(rs.getInt("SongID"), rs.getString("title"),user ,rs.getString("FilePath"), rs.getString("ImagePath"));
             }
 
@@ -61,7 +61,7 @@ public class SongDao {
             rs = myStmt.executeQuery();
 
             while (rs.next()) {
-                User user = userDao.getUserById(rs.getString("ArtistID"));
+                User user = userDao.getUserById(rs.getString("ArtistID"), true);
                 Song song = new Song(rs.getInt("SongID"), rs.getString("Title"), user, rs.getString("FilePath"), rs.getString("ImagePath"));
                 songs.add(song);
             }
@@ -89,7 +89,7 @@ public class SongDao {
             rs = myStmt.executeQuery();
 
             while (rs.next()) {
-                User user = userDao.getUserById(rs.getString("ArtistID"));
+                User user = userDao.getUserById(rs.getString("ArtistID"), true);
                 Song song = new Song(rs.getInt("SongID"), rs.getString("Title"), user, rs.getString("FilePath"), rs.getString("ImagePath"));
                 songs.add(song);
             }

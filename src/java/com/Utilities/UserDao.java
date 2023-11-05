@@ -32,7 +32,7 @@ public class UserDao {
          return 0;
     }
 
-    public User getUserById(String id) throws SQLException {
+    public User getUserById(String id, boolean hide) throws SQLException {
         try (Connection myConn = db.getConnection();
              PreparedStatement myStmt = myConn.prepareStatement("SELECT * FROM user WHERE userId = ?")) {
 
@@ -40,7 +40,7 @@ public class UserDao {
 
             try (ResultSet rs = myStmt.executeQuery()) {
                 if (rs.next()) {
-                    return extractUserFromResultSet(rs);
+                    return extractUserFromResultSet(rs, hide);
                 }
             }
         } catch (Exception e){
@@ -58,7 +58,7 @@ public class UserDao {
 
             try (ResultSet rs = myStmt.executeQuery()) {
                 if (rs.next()) {
-                    return extractUserFromResultSet(rs);
+                    return extractUserFromResultSet(rs, false);
                 }
             }
         }catch (Exception e){
@@ -68,13 +68,19 @@ public class UserDao {
         return null; // User not found
     }
 
-    private User extractUserFromResultSet(ResultSet rs) throws SQLException {
+    private User extractUserFromResultSet(ResultSet rs, boolean hide) throws SQLException {
         String nId = rs.getString("userId");
         String fname = rs.getString("fullName");
         String nmail = rs.getString("email");
-        String npass = rs.getString("password");
-        String nsalt = rs.getString("salt");
 
-        return new User(nId, fname, nmail, npass, nsalt);
+        if (hide){
+            String npass = null;
+            String nsalt = null;
+            return new User(nId, fname, nmail, npass, nsalt);
+        } else{
+            String npass = rs.getString("password");
+            String nsalt = rs.getString("salt");
+            return new User(nId, fname, nmail, npass, nsalt);
+        }
     }
 }

@@ -1,8 +1,6 @@
-
 package com.Controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,9 +14,6 @@ public class PlaylistController extends HttpServlet {
             throws ServletException, IOException {
         
         String playlistID = request.getParameter("playlistId");
-        
-        
-
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("infoPlayList/index.jsp");
         dispatcher.forward(request, response);

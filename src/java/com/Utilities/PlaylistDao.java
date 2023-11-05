@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PlaylistDao {
@@ -21,6 +22,36 @@ public class PlaylistDao {
         userDao = new UserDao();
     }
 
+    public List<Song> getSongofPLaylist(int playlistID) throws Exception {
+        List<Song> songs = new ArrayList<>();
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT songs.* FROM songs" +
+                         "JOIN playlistsongs ON songs.SongID = playlistsongs.SongID" +
+                         "WHERE playlistsongs.PlaylistID = ?";
+
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, playlistID);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                User user = userDao.getUserById(rs.getString("ArtistID"), true);
+                Song song = new Song(rs.getInt("SongID"), rs.getString("Title"), user, rs.getString("FilePath"), rs.getString("ImagePath"));
+                songs.add(song);
+            }
+            return songs;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return songs;
+    }
+    
 
     public void delSongToPlaylist(int playlistID, int songID) throws Exception {
         String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
@@ -88,7 +119,7 @@ public class PlaylistDao {
                         }
                         return null;
                     });
-                    User user = userDao.getUserById(rs.getString("ArtistID"));
+                    User user = userDao.getUserById(rs.getString("ArtistID"), true);
                     Song song = new Song(rs.getInt("SongID"), rs.getString("Title"), user, rs.getString("FilePath"), rs.getString("ImagePath"));
                     playlistMap.get(playlistID).addSong(song);
                 }

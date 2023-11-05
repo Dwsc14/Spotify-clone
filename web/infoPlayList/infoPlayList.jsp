@@ -131,5 +131,3 @@
     </div>
     <div class="space2"></div>
 </div>
-
-<script></script>
