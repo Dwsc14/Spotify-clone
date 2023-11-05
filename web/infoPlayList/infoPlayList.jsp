@@ -2,17 +2,19 @@
 
 <div class="overlay" id="overlay"></div>
 
-<div class="popup" id="popup">
-    <p id="addSong">Add to playlist</p>
-    <p id="removeSong">Remove to playlist</p>
-</div>
+<c:if test="${sessionScope.User != null}">
+    <div class="popup" id="popup">
+        <p id="addSong">Add to playlist</p>
+        <p id="removeSong">Remove to playlist</p>
+    </div>
 
-<div class="popup1" id="">
-    <p>Create playlist</p>
-    <c:forEach items="${playlists}" var="entry">
-        <p name="pl-${entry.key}">${entry.value}</p>
-    </c:forEach>
-</div>
+    <div class="popup1" id="">
+        <p>Create playlist</p>
+        <c:forEach items="${playlists}" var="entry">
+            <p name="pl-${entry.key}">${entry.value}</p>
+        </c:forEach>
+    </div>
+</c:if>
 
 <div class="popup2" id="">
     <p>My Playlist #1</p>
@@ -84,7 +86,7 @@
                                 <td></td>
                                 <td>-:-</td>
                                 <td>
-                                    <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
+                                    <button playlist-id="${id}" song-id="${song.getId()}" class="btn-like"><i class="bi bi-heart-fill"></i></button>
                                 </td>
                             </tr>
                         </c:forEach>

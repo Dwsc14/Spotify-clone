@@ -25,14 +25,8 @@
 
         <script src="static/js/sidebar.js"></script>
         <script src="static/js/header.js"></script>
-        <script src="static/js/playsound.js"></script>
         <script src="static/js/infoplaylist.js"></script>
-
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"
-            integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+        <script src="static/js/playsound.js"></script>
     </body>
 </html>

@@ -90,15 +90,24 @@ public class PlaylistDao {
     }
     
 
-    public void delSongToPlaylist(int playlistID, int songID) throws Exception {
-        String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
-        try (Connection myConn = db.getConnection();
-            PreparedStatement myStmt = myConn.prepareStatement(sql)) {
+    public void delSongToPlaylist(int playlistID, int songID){
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+        
+        try {
+            myConn = db.getConnection();
+            String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
+
+            myStmt = myConn.prepareStatement(sql);
             myStmt.setInt(1, playlistID);
             myStmt.setInt(2, songID);
             myStmt.executeUpdate();
-        } catch (SQLException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
         }
     }
 

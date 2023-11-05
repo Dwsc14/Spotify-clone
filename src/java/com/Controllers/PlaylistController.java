@@ -31,7 +31,22 @@ public class PlaylistController extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String action = request.getParameter("action");
+        String rq = request.getParameter("playlistId");
+        int playlistID = Integer.parseInt(rq);
+
         
+        if ("add".equals(action)){
+            String rqSong = request.getParameter("songId");
+            int songID = Integer.parseInt(rqSong);
+
+        } else if ("del".equals(action)){
+            String rqSong = request.getParameter("songId");
+            int songID = Integer.parseInt(rqSong);
+
+            pldao.delSongToPlaylist(playlistID, songID);
+        } 
+
         session = request.getSession();
         User user = (User) session.getAttribute("User");
         if (user != null) {
@@ -40,13 +55,13 @@ public class PlaylistController extends HttpServlet {
             request.setAttribute("playlists", listPL);
         }
 
-        String rq = request.getParameter("playlistId");
-        int playlistID = Integer.parseInt(rq);
+        
         
         Playlist pl = pldao.getPlistByPlistID(playlistID);
 
         List<Song> songs = pl.getSongs();
         
+        request.setAttribute("id", playlistID);
         request.setAttribute("title", pl.getTitle());
         request.setAttribute("img", pl.getImagePath());
         request.setAttribute("size", pl.getSize());
