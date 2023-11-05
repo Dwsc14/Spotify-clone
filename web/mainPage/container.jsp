@@ -1,6 +1,4 @@
 <%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="mainPage/static/css/container.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
 <body>
     <div class="page">
@@ -98,7 +96,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="menu">
                     <div class="playList">
                         <p id="type">Latest Songs</p>

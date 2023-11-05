@@ -1,4 +1,10 @@
 <article>
+
+
+    foreach ${"rs"}
+
+
+
     <div class="container">
         <div class="inside">
             <div class="menu">

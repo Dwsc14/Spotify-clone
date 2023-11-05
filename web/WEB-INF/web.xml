@@ -20,6 +20,10 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>com.Controllers.LoginController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>playlist</servlet-name>
+        <servlet-class>com.Controllers.PlaylistController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>playlist</servlet-name>
+        <url-pattern>/playlist</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

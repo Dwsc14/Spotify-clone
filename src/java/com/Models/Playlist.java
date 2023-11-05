@@ -7,17 +7,17 @@ public class Playlist {
     private int id;
     private String title;
     private List<Song> songs;
-    // private String ImagePath;
+    private String ImagePath;
     
     public Playlist() {
         songs = new ArrayList<>();
     }
 
-    public Playlist(int id, String title, List<Song> songs) {
+    public Playlist(int id, String title, List<Song> songs, String ImagePath) {
         this.id = id;
         this.title = title;
         this.songs = new ArrayList<>(songs);
-        // this.ImagePath = ImagePath;
+        this.ImagePath = ImagePath;
     }
 
     public int getId() {
@@ -52,6 +52,7 @@ public class Playlist {
         return songs.size();
     }
 
+    
 
 
     @Override
@@ -61,6 +62,10 @@ public class Playlist {
                 ", title='" + title + '\'' +
                 ", songs=" + songs +
                 '}';
+    }
+
+    public String getImagePath() {
+        return ImagePath;
     }
     
 }

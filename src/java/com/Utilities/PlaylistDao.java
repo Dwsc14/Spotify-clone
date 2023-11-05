@@ -21,6 +21,7 @@ public class PlaylistDao {
         userDao = new UserDao();
     }
 
+
     public void delSongToPlaylist(int playlistID, int songID) throws Exception {
         String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
         try (Connection myConn = db.getConnection();
@@ -66,7 +67,7 @@ public class PlaylistDao {
     public Map<Integer, Playlist> getPlistById(String userID) throws Exception {
         Map<Integer, Playlist> playlistMap = new HashMap<>();
         String sql = "SELECT Playlists.PlaylistID, Playlists.Title AS PlaylistTitle, " +
-                     "Songs.SongID, Songs.Title, Songs.ArtistID, Songs.FilePath, Songs.ImagePath " +
+                    "Songs.SongID, Songs.Title, Songs.ArtistID, Songs.FilePath, Songs.ImagePath, Playlists.image_path as playlist_img " +
                      "FROM Songs " +
                      "INNER JOIN PlaylistSongs ON Songs.SongID = PlaylistSongs.SongID " +
                      "INNER JOIN Playlists ON PlaylistSongs.PlaylistID = Playlists.PlaylistID " +
@@ -81,7 +82,7 @@ public class PlaylistDao {
                     int playlistID = rs.getInt("PlaylistID");
                     playlistMap.computeIfAbsent(playlistID, key -> {
                         try {
-                            return new Playlist(playlistID, rs.getString("PlaylistTitle"), new ArrayList<>());
+                            return new Playlist(playlistID, rs.getString("PlaylistTitle"), new ArrayList<>(), rs.getString("playlist_img"));
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -93,7 +94,6 @@ public class PlaylistDao {
                 }
             }
         } catch (SQLException e) {
-            // Xử lý lỗi SQL
             e.printStackTrace();
         }
         return playlistMap;
