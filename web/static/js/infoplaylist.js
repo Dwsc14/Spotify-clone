@@ -7,43 +7,45 @@ document.addEventListener("DOMContentLoaded", function () {
     var popup1Visible = false;
     var popup2Visible = false;
 
-    var playlist_id;
-    var song_id;
-
     likeButtons.forEach(function (button) {
         button.addEventListener("click", function (event) {
             var isChangeColor = event.currentTarget.classList.contains("change-color");
 
-            playlist_id = event.currentTarget.getAttribute("playlist-id");
-            song_id = event.currentTarget.getAttribute("song-id");
-
             if (isChangeColor) {
+                // Đóng popup và thay đổi màu của btn-like
                 closePopup();
             } else {
+                // Hiển thị popup và lớp overlay
                 popup.style.display = "block";
                 overlay.style.display = "block";
 
+                // Khi popup hiển thị, đóng băng màn hình nền bằng cách ngăn scroll
                 document.body.style.overflow = "hidden";
 
+                // Thay đổi màu của btn-like
                 event.currentTarget.classList.add("change-color");
             }
         });
     });
 
+    // Hàm để đóng popup và thay đổi màu btn-like
     function closePopup() {
         popup.style.display = "none";
         overlay.style.display = "none";
         document.body.style.overflow = "auto";
 
+        // Thay đổi màu của btn-like
         likeButtons.forEach(function (button) {
             button.classList.remove("change-color");
         });
 
+        // Đóng popup1 nếu nó đang hiển thị
         if (popup1Visible) {
             popup1.style.display = "none";
             popup1Visible = false;
         }
 
+        // Đóng popup2 nếu nó đang hiển thị
         if (popup2Visible) {
             popup2.style.display = "none";
             popup2Visible = false;
@@ -51,11 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     overlay.addEventListener("click", function (event) {
+        // Kiểm tra xem người dùng có ấn vào overlay (ngoài popup) không
         if (event.target === overlay) {
             closePopup();
         }
     });
 
+    // Xử lý khi nhấn vào "Add to playlist"
     var addSong = document.getElementById("addSong");
     addSong.addEventListener("click", function () {
         popup1.style.display = "block";
@@ -64,19 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
         popup2Visible = false;
     });
 
+    // Xử lý khi nhấn vào "Remove to playlist"
     var removeSong = document.getElementById("removeSong");
     removeSong.addEventListener("click", function () {
-        var xhr = new XMLHttpRequest();
-        var url = "playlist?playlistId=" + playlist_id + "&songId=" + song_id + "&action=del";
-
-        xhr.open("POST", url, true);
-
-        xhr.addEventListener("load", function () {
-            if (xhr.status === 200) {
-                window.location.reload();
-            } else {
-            }
-        });
-        xhr.send();
+        console.log("remove");
     });
 });

@@ -2,7 +2,6 @@ const inputElement = document.getElementById("myInput");
 
 if (inputElement) {
     inputElement.addEventListener("focus", function () {
-        console.log("aaaa");
         const divElement = document.querySelector("header .head-bar .left nav .input-search::before");
         if (divElement) {
             divElement.style.border = "3px solid blue";
@@ -17,4 +16,4 @@ if (inputElement) {
     });
 }
 divElement = document.querySelector("header .head-bar .left nav .input-search::before");
-console.log(divElement);
+console.log(divElement); 

@@ -1,27 +1,26 @@
-<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
-<div class="overlay" id="overlay"></div>
+<article>
+    <div class="overlay" id="overlay"></div>
 
-<c:if test="${sessionScope.User != null}">
-    <div class="popup" id="popup">
-        <p id="addSong">Add to playlist</p>
-        <p id="removeSong">Remove to playlist</p>
+    <c:if test="${sessionScope.User != null}">
+        <div class="popup" id="popup">
+            <p id="addSong">Add to playlist</p>
+            <p id="removeSong">Remove to playlist</p>
+        </div>
+
+        <div class="popup1" id="">
+            <p>Create playlist</p>
+            <c:forEach items="${playlists}" var="entry">
+                <p name="pl-${entry.key}">${entry.value}</p>
+            </c:forEach>
+        </div>
+    </c:if>
+
+    <div class="popup2" id="">
+        <p>My Playlist #1</p>
     </div>
-
-    <div class="popup1" id="">
-        <p>Create playlist</p>
-        <c:forEach items="${playlists}" var="entry">
-            <p name="pl-${entry.key}">${entry.value}</p>
-        </c:forEach>
-    </div>
-</c:if>
-
-<div class="popup2" id="">
-    <p>My Playlist #1</p>
-</div>
-
-<div class="page">
-    <div class="space1"></div>
 
     <div class="container">
         <div class="inside">
@@ -60,9 +59,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${songs}" var="song">
+                        <c:forEach items="${songs}" var="song" varStatus="songStatus">
                             <tr class="song">
-                                <td scope="row">1</td>
+                                <td scope="row">${songStatus.index + 1}</td>
                                 <td>
                                     <div class="songInfo">
                                         <div class="songImg">
@@ -70,13 +69,9 @@
                                         </div>
                                         <div class="songDetails">
                                             <p>
-                                                <a
-                                                    href="#"
-                                                    class="playSong"
+                                                <a href="#" class="playSong"
                                                     data-author="${song.getUser().getFullName()}"
-                                                    data-song=".${song.getSrc()}"
-                                                    >${song.getTitle()}</a
-                                                >
+                                                    data-song=".${song.getSrc()}">${song.getTitle()}</a>
                                             </p>
                                             <a href="">${song.getUser().getFullName()}</a>
                                         </div>
@@ -86,15 +81,15 @@
                                 <td></td>
                                 <td>-:-</td>
                                 <td>
-                                    <button playlist-id="${id}" song-id="${song.getId()}" class="btn-like"><i class="bi bi-heart-fill"></i></button>
+                                    <button playlist-id="${id}" song-id="${song.getId()}" class="btn-like"><i
+                                            class="bi bi-heart-fill"></i></button>
                                 </td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
-            <div class="space-inside"></div>
-        </div>
+        <div class="space-inside"></div>
+
     </div>
-    <div class="space2"></div>
-</div>
+</article>

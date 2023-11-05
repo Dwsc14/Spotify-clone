@@ -1,22 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
-
-* {
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-}
-
-.sidebar {
+aside {
     width: 17.5%;
     height: 100%;
     background-color: black;
-    /* flex-wrap: wrap; */
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -25,13 +10,13 @@ body {
     left: 0;
 }
 
-.sidebar .inside {
+aside .inside {
     width: 92.5%;
     height: 88%;
     padding-top: 10%;
 }
 
-.sidebar .inside .top {
+aside .inside .top {
     width: 100%;
     height: 20%;
     display: flex;
@@ -41,7 +26,7 @@ body {
     padding: 5px 0 5px 5px;
 }
 
-.sidebar .inside .top .icon {
+aside .inside .top .icon {
     width: 20%;
     height: 100%;
     display: flex;
@@ -50,13 +35,13 @@ body {
     justify-content: space-between;
 }
 
-.sidebar .inside .top .bi {
+aside .inside .top .bi {
     font-size: 30px;
     color: #fff;
     cursor: pointer;
 }
 
-.sidebar .inside .top .icon_text {
+aside .inside .top .icon_text {
     width: 80%;
     height: 100%;
     display: flex;
@@ -64,7 +49,7 @@ body {
     justify-content: space-between;
 }
 
-.sidebar .inside .top span {
+aside .inside .top span {
     margin: 10px 0 10px 5px;
     font-weight: 600;
     font-size: 15px;
@@ -72,7 +57,7 @@ body {
     cursor: pointer;
 }
 
-.sidebar .inside .middle {
+aside .inside .middle {
     width: 100%;
     height: 12%;
     display: flex;
@@ -84,7 +69,7 @@ body {
     color: black;
 }
 
-.sidebar .inside .middle .left_middle {
+aside .inside .middle .left_middle {
     width: 20%;
     height: 100%;
     display: flex;
@@ -92,31 +77,31 @@ body {
     justify-content: center;
 }
 
-.sidebar .inside .middle .left_middle .bi {
+aside .inside .middle .left_middle .bi {
     font-size: 28px;
     cursor: pointer;
 }
 
-.sidebar .inside .middle .right_middle {
+aside .inside .middle .right_middle {
     width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.sidebar .inside .middle .right_middle .bi {
+aside .inside .middle .right_middle .bi {
     font-size: 32.5px;
     cursor: pointer;
 }
 
-.sidebar .inside .middle span {
+aside .inside .middle span {
     font-size: 16px;
     font-weight: 600;
     margin: 0 18px 0 3px;
     cursor: pointer;
 }
 
-.sidebar .inside .bottom .search_bar {
+aside .inside .bottom .search_bar {
     width: 87.5%;
     height: 12.5%;
     display: flex;
@@ -125,13 +110,13 @@ body {
     margin: 0 auto;
 }
 
-.sidebar .inside .bottom .search_bar .bi {
+aside .inside .bottom .search_bar .bi {
     font-size: 17.5px;
     color: #A7A7A7;
     cursor: pointer;
 }
 
-.sidebar .inside .bottom .search_bar input {
+aside .inside .bottom .search_bar input {
     background-color: #2A2A2A;
     width: 75%;
     height: 25px;
@@ -143,7 +128,7 @@ body {
     padding-left: 3px;
 }
 
-.sidebar .inside .bottom .search_bar #search-input::placeholder {
+aside .inside .bottom .search_bar #search-input::placeholder {
     font-size: 13px;
     color: #fff;
 }
@@ -152,7 +137,7 @@ body {
     display: none;
 }
 
-.sidebar .inside .bottom .search_bar span {
+aside .inside .bottom .search_bar span {
     font-size: 12.5px;
     font-weight: 300;
     color: #fff;
@@ -180,14 +165,14 @@ body {
     border-radius: 4px;
 }
 
-.inside .bottom .menu_song .songItem {
+aside .inside .bottom .menu_song .songItem {
     width: 92.5%;
     height: 25%;
     display: flex;
     margin: 0 auto;
 }
 
-.inside .bottom .menu_song .songItem .songImg {
+aside .inside .bottom .menu_song .songItem .songImg {
     width: 30%;
     height: 100%;
     display: flex;
@@ -195,13 +180,13 @@ body {
     align-items: center;
 }
 
-.inside .bottom .menu_song .songItem img {
+aside .inside .bottom .menu_song .songItem img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-.inside .bottom .menu_song .songItem .songDetails {
+aside .inside .bottom .menu_song .songItem .songDetails {
     width: 70%;
     height: 100%;
     display: flex;
@@ -209,7 +194,7 @@ body {
     align-items: center;
 }
 
-.inside .bottom .menu_song .songItem a {
+aside .inside .bottom .menu_song .songItem a {
     font-size: 15px;
     font-weight: 500;
     color: #fff;

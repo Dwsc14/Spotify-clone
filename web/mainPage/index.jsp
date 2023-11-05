@@ -20,7 +20,5 @@
 
         <script src="static/js/sidebar.js"></script>
         <script src="static/js/header.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-        <script src="static/js/playsound.js"></script>
     </body>
 </html>

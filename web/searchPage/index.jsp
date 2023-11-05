@@ -14,7 +14,7 @@
 
     <body>
         <jsp:include page="searchHeader.jsp" />
-        <jsp:include page="seachPage.jsp" />
+        <jsp:include page="searchContainer.jsp" />
         <jsp:include page="../include/sidebar.jsp" />
         <jsp:include page="../include/footer.jsp" />
 

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
 :root {
     --primary: #FFAB40;
-    --secondary:  rgba(255, 204, 128,1.0);
+    --secondary: rgba(255, 204, 128, 1.0);
 }
 
 * {
@@ -16,44 +17,34 @@ body {
     height: 100vh;
 }
 
-.page {
+article {
     width: 82.5%;
-    height: 100%;
     position: fixed;
-    top: 0;
+    top: 13%;
+    bottom: 12%;
     right: 0;
 }
 
-.space1 {
+article .container {
     width: 100%;
-    height: 13%;
-}
-
-.container {
-    width: 100%;
-    height: 75%;
+    height: 100%;
     background: black;
     overflow-y: scroll;
 }
 
-.space2 {
-    width: 100%;
-    height: 12%;
-}
-
-.container .inside {
+article .container .inside {
     width: 97.5%;
     height: calc(7500%/87);
     margin: 0 auto;
 }
 
-.container .space-inside {
+article .container .space-inside {
     width: 100%;
     height: 5%;
     background-color: black;
 }
 
-.container .inside .advertise {
+article .container .inside .advertise {
     width: 100%;
     height: 40%;
     background: var(--primary);
@@ -65,7 +56,7 @@ body {
     align-items: center;
 }
 
-.container .inside .advertise .left {
+article .container .inside .advertise .left {
     width: 17.5%;
     height: 85%;
     overflow: hidden;
@@ -73,27 +64,27 @@ body {
     margin: 0 3% 0 10%;
 }
 
-.container .inside .advertise .left img {
+article .container .inside .advertise .left img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     image-rendering: crisp-edges;
 }
 
-.container .inside .advertise .right {
+article .container .inside .advertise .right {
     width: 55%;
     height: 90%;
     overflow: hidden;
 }
 
-.container .inside .advertise .right h5 {
+article .container .inside .advertise .right h5 {
     width: 95%;
     color: black;
     margin: 0 0 0 0;
     text-decoration: none;
 }
 
-.container .inside .advertise .right a {
+article .container .inside .advertise .right a {
     display: inline-block;
     width: 95%;
     font-size: 47.5px;
@@ -105,7 +96,7 @@ body {
     text-overflow: ellipsis;
 }
 
-.container .inside .advertise .right p {
+article .container .inside .advertise .right p {
     display: inline-block;
     width: 95%;
     font-size: 14px;
@@ -118,12 +109,12 @@ body {
     text-overflow: ellipsis;
 }
 
-.container .inside .advertise .right button {
+article .container .inside .advertise .right button {
     width: 15%;
     height: 25%;
     font-size: 15px;
     font-weight: 500;
-    border: 2px solid rgba(255, 204, 128,1.0);
+    border: 2px solid rgba(255, 204, 128, 1.0);
     border-radius: 20px;
     background: black;
     color: white;
@@ -138,13 +129,13 @@ body {
     margin-right: 3%;
 }
 
-.container .inside .advertise .right i {
+article .container .inside .advertise .right i {
     font-size: 25px;
     color: black;
     cursor: pointer;
 }
 
-.container .inside .menu {
+article .container .inside .menu {
     width: 100%;
     height: 65%;
     background: rgba(255, 255, 255, 0.15);
@@ -152,13 +143,13 @@ body {
     margin-top: 2%;
 }
 
-.container .inside .menu .playList {
+article .container .inside .menu .playList {
     width: 95%;
     height: 100%;
     margin: 0 auto;
 }
 
-.container .inside .menu .playList #type {
+article .container .inside .menu .playList #type {
     display: inline-block;
     width: 50%;
     height: 10%;
@@ -172,13 +163,13 @@ body {
     margin-left: -1%;
 }
 
-.container .inside .menu .playList .list {
+article .container .inside .menu .playList .list {
     width: 100%;
     height: 77.5%;
     display: flex;
 }
 
-.container .inside .menu .playList .list .song {
+article .container .inside .menu .playList .list .song {
     width: 17.5%;
     height: 95%;
     background: rgba(0, 0, 0, 0.1);
@@ -188,21 +179,21 @@ body {
     /* Đặt khoảng cách giữa các ô ở đây */
 }
 
-.container .inside .menu .playList .list .song:last-child {
+article .container .inside .menu .playList .list .song:last-child {
     margin-right: 0;
     /* Loại bỏ margin-right cho ô cuối cùng */
 }
 
-.container .inside .menu .playList .list a {
+article .container .inside .menu .playList .list a {
     text-decoration: none;
 }
 
-.container .inside .menu .playList .list .song:hover {
+article .container .inside .menu .playList .list .song:hover {
     background: rgba(255, 255, 255, 0.1);
 
 }
 
-.container .inside .menu .playList .list .song .songImg {
+article .container .inside .menu .playList .list .song .songImg {
     width: 100%;
     height: 70%;
     display: flex;
@@ -210,14 +201,14 @@ body {
     align-items: center;
 }
 
-.container .inside .menu .playList .list .song .songImg img {
+article .container .inside .menu .playList .list .song .songImg img {
     width: 80%;
     height: 85%;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.container .inside .menu .playList .list .song .songDetail {
+article .container .inside .menu .playList .list .song .songDetail {
     width: 100%;
     height: 30%;
     display: flex;
