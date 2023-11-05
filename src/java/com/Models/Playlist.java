@@ -52,8 +52,6 @@ public class Playlist {
         return songs.size();
     }
 
-    
-
 
     @Override
     public String toString() {

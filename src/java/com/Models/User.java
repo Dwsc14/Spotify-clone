@@ -4,18 +4,20 @@ public class User {
     private String userId;
     private String fullName;
     private String email;
+    private String img;
     private String password;
     private String salt;
 
     public User() {
     }
 
-    public User(String userId, String fullName, String email, String password, String salt) {
+    public User(String userId, String fullName, String email, String password, String salt, String img) {
         this.userId = userId;
         this.fullName = fullName;
         this.email = email;
         this.password = password;
         this.salt = salt;
+        this.img = img;
     }
 
     public String getUserId() {
@@ -58,6 +60,8 @@ public class User {
         this.salt = salt;
     }
 
+    
+
     @Override
     public String toString() {
         return "User{" +
@@ -65,5 +69,9 @@ public class User {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public String getImg() {
+        return img;
     }
 }

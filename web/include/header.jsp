@@ -14,7 +14,7 @@
                 <button>Explore Premium</button>
                 <i class="bi bi-bell"></i>
                 <div class="user-profile">
-                    <img src="mainPage/static/img/user.jpg" alt="" />
+                    <img src="${sessionScope.User.getImg()}" alt="" />
                 </div>
             </nav>
         </div>

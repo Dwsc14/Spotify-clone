@@ -6,12 +6,12 @@
     <div class="inside">
         <div class="top">
             <div class="icon">
-                <i class="bi bi-house-door-fill"></i>
+                <a href="home"><i class="bi bi-house-door-fill"></i></a>
                 <i class="bi bi-search"></i>
             </div>
 
             <div class="icon_text">
-                <span>Home</span>
+                <a href="home"><span>Home</span></a>
                 <span>Search</span>
             </div>
         </div>

@@ -22,15 +22,52 @@ public class PlaylistDao {
         userDao = new UserDao();
     }
 
-    public List<Song> getSongofPLaylist(int playlistID) throws Exception {
+    public Playlist getPlistByPlistID(int playlistID){
+        Playlist pl = null;
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT playlists.title as PL_title, playlists.image_path as PL_img, playlists.UserID as PL_userID, " +
+                         "songs.SongID as S_id, songs.Title as S_title, songs.ArtistID as S_userID, songs.FilePath as S_src, songs.ImagePath as S_img " +
+                         "FROM playlists "+
+                         "JOIN playlistsongs ON playlists.PlaylistID = playlistsongs.PlaylistID "+
+                         "JOIN songs ON playlistsongs.SongID = songs.SongID "+
+                         "WHERE playlists.PlaylistID = ?";
+
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, playlistID);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                if (pl == null){
+                    pl = new Playlist(playlistID, rs.getString("PL_title"), new ArrayList<>(), rs.getString("PL_img"));
+                }
+                User user = userDao.getUserById(rs.getString("S_userID"), true);
+                Song song = new Song(rs.getInt("S_id"), rs.getString("S_title"), user, rs.getString("S_src"), rs.getString("S_img"));
+                pl.addSong(song);
+            }
+            return pl;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return pl;
+    }
+
+    public List<Song> getSongofPLaylist(int playlistID){
         List<Song> songs = new ArrayList<>();
         Connection myConn = null;
         PreparedStatement myStmt = null;
         ResultSet rs = null;
         try {
             myConn = db.getConnection();
-            String sql = "SELECT songs.* FROM songs" +
-                         "JOIN playlistsongs ON songs.SongID = playlistsongs.SongID" +
+            String sql = "SELECT songs.* FROM songs " +
+                         "JOIN playlistsongs ON songs.SongID = playlistsongs.SongID " +
                          "WHERE playlistsongs.PlaylistID = ?";
 
             myStmt = myConn.prepareStatement(sql);
@@ -77,20 +114,27 @@ public class PlaylistDao {
         }
     }
 
-    public Map<Integer, String> getNameIdListById(String userID) throws Exception {
+    public Map<Integer, String> getNameIdListById(String userID){
         Map<Integer, String> playlistMap = new HashMap<>();
-        String sql = "SELECT PlaylistID, Title FROM Playlists WHERE UserID = ?";
-        try (Connection myConn = db.getConnection();
-             PreparedStatement myStmt = myConn.prepareStatement(sql)) {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT PlaylistID, Title FROM Playlists WHERE UserID = ?";
+            myStmt = myConn.prepareStatement(sql);
             myStmt.setString(1, userID);
-            try (ResultSet rs = myStmt.executeQuery()) {
-                while (rs.next()) {
-                    playlistMap.put(rs.getInt("PlaylistID"), rs.getString("Title"));
-                }
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                playlistMap.put(rs.getInt("PlaylistID"), rs.getString("Title"));
             }
-        } catch (SQLException e) {
-            // Xử lý lỗi SQL
+        } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
         }
         return playlistMap;
     }

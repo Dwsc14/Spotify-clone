@@ -1,31 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-}
-
 .changeProfile {
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: black;
-    display: flex;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: 101;
 }
 
 .changeProfile .cardBlock {
     width: 37.5%;
     height: 52.5%;
-    background: rgba(255, 255, 255, 0.15);
+    background: black;
     border-radius: 10px;
+}
+
+.change-profile {
+    cursor: pointer;
 }
 
 .changeProfile .cardBlock .cardBlockHeader {
@@ -38,30 +32,30 @@ body {
     align-items: center;
 }
 
-.changeProfile .cardBlock .cardBlockHeader p{
+.changeProfile .cardBlock .cardBlockHeader p {
     font-size: 22.5px;
     font-weight: 500;
     color: #fff;
 }
 
-.changeProfile .cardBlock .cardBlockHeader #exit{
+.changeProfile .cardBlock .cardBlockHeader #exit {
     font-size: 22.5px;
     color: gray;
 }
 
-.changeProfile .cardBlock .cardBlockHeader #exit:hover{
+.changeProfile .cardBlock .cardBlockHeader #exit:hover {
     font-size: 22.5px;
     color: #fff;
 }
 
-.changeProfile .cardBlock .cardBlockBody{
+.changeProfile .cardBlock .cardBlockBody {
     width: 95%;
     height: 60%;
     margin: 0 auto;
     display: flex;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-left{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-left {
     width: 40%;
     height: 100%;
     display: flex;
@@ -69,14 +63,14 @@ body {
     align-items: center;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-left img{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-left img {
     width: 90%;
     height: 90%;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right {
     width: 60%;
     height: 100%;
     display: flex;
@@ -85,15 +79,15 @@ body {
     justify-content: center;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .changeName{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .changeName {
     width: 90%;
     height: 20%;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .changeName input{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .changeName input {
     width: 100%;
     height: 100%;
-    background: hsla(0,0%,100%,.1);
+    background: hsla(0, 0%, 100%, 0.1);
     border: 1px solid transparent;
     border-radius: 4px;
     font-size: 14px;
@@ -101,7 +95,7 @@ body {
     padding: 0 12px;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .cardBlockBody-rightButton{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .cardBlockBody-rightButton {
     width: 90%;
     height: 30%;
     display: flex;
@@ -110,7 +104,7 @@ body {
     margin-top: 2%;
 }
 
-.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .cardBlockBody-rightButton button{
+.changeProfile .cardBlock .cardBlockBody .cardBlockBody-right .cardBlockBody-rightButton button {
     width: 32.5%;
     height: 87.5%;
     font-size: 15px;
@@ -122,18 +116,14 @@ body {
     cursor: pointer;
 }
 
-.changeProfile .cardBlock .cardBlockFooter{
+.changeProfile .cardBlock .cardBlockFooter {
     width: 92.5%;
     height: 15%;
     margin: 0 auto;
 }
 
-.changeProfile .cardBlock .cardBlockFooter p{
+.changeProfile .cardBlock .cardBlockFooter p {
     font-size: 10px;
     font-weight: 500;
     color: #fff;
 }
-
-
-
-

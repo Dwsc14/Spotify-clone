@@ -1,3 +1,5 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <div class="overlay" id="overlay"></div>
 
 <div class="popup" id="popup">
@@ -7,15 +9,9 @@
 
 <div class="popup1" id="">
     <p>Create playlist</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
-    <p>My Playlist #1</p>
+    <c:forEach items="${playlists}" var="entry">
+        <p name="pl-${entry.key}">${entry.value}</p>
+    </c:forEach>
 </div>
 
 <div class="popup2" id="">
@@ -29,15 +25,15 @@
         <div class="inside">
             <div class="top">
                 <div class="topLeft">
-                    <img src="static/img/gdragon.jpg" alt="" />
+                    <img src="${img}" alt="" />
                 </div>
 
                 <div class="topRight">
                     <p id="line1">Public playlist</p>
                     <br />
-                    <p id="line2">BIGBANG Radio</p>
+                    <p id="line2">${title}</p>
                     <br />
-                    <p id="line3">With G-DRAGON, GD&TOP, BLACKPINK and more</p>
+                    <p id="line3">${size} songs ..</p>
                 </div>
             </div>
 
@@ -62,67 +58,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="song">
-                            <td scope="row">1</td>
-                            <td>
-                                <div class="songInfo">
-                                    <div class="songImg">
-                                        <img src="static/img/stillLife.jpg" alt="" />
+                        <c:forEach items="${songs}" var="song">
+                            <tr class="song">
+                                <td scope="row">1</td>
+                                <td>
+                                    <div class="songInfo">
+                                        <div class="songImg">
+                                            <img src=".${song.getImagePath()}" alt="" />
+                                        </div>
+                                        <div class="songDetails">
+                                            <p>
+                                                <a
+                                                    href="#"
+                                                    class="playSong"
+                                                    data-author="${song.getUser().getFullName()}"
+                                                    data-song=".${song.getSrc()}"
+                                                    >${song.getTitle()}</a
+                                                >
+                                            </p>
+                                            <a href="">${song.getUser().getFullName()}</a>
+                                        </div>
                                     </div>
-                                    <div class="songDetails">
-                                        <p>Still Life</p>
-                                        <a href="">BIGBANG</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><a href="">Still Life</a></td>
-                            <td></td>
-                            <td>3:08</td>
-                            <td>
-                                <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr class="song">
-                            <td scope="row">2</td>
-                            <td>
-                                <div class="songInfo">
-                                    <div class="songImg">
-                                        <img src="static/img/untitled2019.jpg" alt="" />
-                                    </div>
-                                    <div class="songDetails">
-                                        <p>Untitled,2014</p>
-                                        <a href="">G-DRAGON</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><a href="">Kwon Jiyong</a></td>
-                            <td></td>
-                            <td>3:49</td>
-                            <td>
-                                <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="song">
-                            <td scope="row">3</td>
-                            <td>
-                                <div class="songInfo">
-                                    <div class="songImg">
-                                        <img src="static/img/stillLife.jpg" alt="" />
-                                    </div>
-                                    <div class="songDetails">
-                                        <p>Still Life</p>
-                                        <a href="">BIGBANG</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><a href="">Still Life</a></td>
-                            <td></td>
-                            <td>3:08</td>
-                            <td>
-                                <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
-                            </td>
-                        </tr>
+                                </td>
+                                <td><a href="">----</a></td>
+                                <td></td>
+                                <td>-:-</td>
+                                <td>
+                                    <button class="btn-like"><i class="bi bi-heart-fill"></i></button>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

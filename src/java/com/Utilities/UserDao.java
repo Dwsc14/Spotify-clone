@@ -73,14 +73,19 @@ public class UserDao {
         String fname = rs.getString("fullName");
         String nmail = rs.getString("email");
 
+        String img = rs.getString("image_path");
+        if (img == null) {
+            img = "static\\img\\def_ava.jpg";
+        }
+
         if (hide){
             String npass = null;
             String nsalt = null;
-            return new User(nId, fname, nmail, npass, nsalt);
+            return new User(nId, fname, nmail, npass, nsalt, img);
         } else{
             String npass = rs.getString("password");
             String nsalt = rs.getString("salt");
-            return new User(nId, fname, nmail, npass, nsalt);
+            return new User(nId, fname, nmail, npass, nsalt, img);
         }
     }
 }

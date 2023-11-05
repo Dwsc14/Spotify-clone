@@ -71,9 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Xử lý khi nhấn vào "Remove to playlist"
     var removeSong = document.getElementById("removeSong");
     removeSong.addEventListener("click", function () {
-        popup2.style.display = "block";
-        popup2Visible = true;
-        popup1.style.display = "none";
-        popup1Visible = false;
+        console.log("remove");
     });
 });

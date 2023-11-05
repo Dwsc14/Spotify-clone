@@ -18,16 +18,16 @@
                 <div class="playBack-control-space"></div>
                 <div class="playBack-control-button">
                     <a href=""><i class="bi bi-skip-start-fill"></i></a>
-                    <a href=""><i class="bi bi-play-circle-fill"></i></a>
+                    <a href="" id="play-button"><i class="bi bi-play-circle-fill"></i></a>
                     <a href=""><i class="bi bi-skip-end-fill"></i></a>
                 </div>
                 <div class="playBack-control-space"></div>
             </div>
 
             <div class="playBack-bar">
-                <span>00:00</span>
-                <input type="range" value="0" class="seek-bar" />
-                <span>00:00</span>
+                <span id="current-time">00:00</span>
+                <input type="range" value="0" class="seek-bar" id="seek-bar" />
+                <span id="total-time">00:00</span>
             </div>
         </div>
         <div class="playBack-right"></div>
