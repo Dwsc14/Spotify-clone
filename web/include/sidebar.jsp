@@ -12,7 +12,7 @@
 
             <div class="icon_text">
                 <a href="home"><span>Home</span></a>
-                <span>Search</span>
+                <a href="search"><span>Search</span></a>
             </div>
         </div>
 
@@ -43,11 +43,11 @@
                     <div class="songItem">
                         <div class="songImg">
                             <a href="playlist?playlistId=${playlistEntry.value.getId()}"
-                                ><img src="${playlistEntry.value.getImagePath()}" alt="BigBang"
+                                ><img src=".${playlistEntry.value.getImagePath()}" alt="BigBang"
                             /></a>
                         </div>
                         <div class="songDetails">
-                            <a href="ProfileController?playlist=${playlistEntry.value.getId()}">${playlistEntry.value.getTitle()}</a>
+                            <a href="profile?playlist=${playlistEntry.value.getId()}">${playlistEntry.value.getTitle()}</a>
                         </div>
                     </div>
                 </c:forEach>

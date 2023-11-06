@@ -17,6 +17,10 @@
         <servlet-class>com.Controllers.SearchController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>com.Controllers.ProfileController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LoginController</servlet-name>
         <servlet-class>com.Controllers.LoginController</servlet-class>
     </servlet>
@@ -38,7 +42,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchController</servlet-name>
-        <url-pattern>/SearchController</url-pattern>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
