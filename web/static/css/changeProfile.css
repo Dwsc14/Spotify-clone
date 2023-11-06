@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3); 
     display: none;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
 .changeProfile .cardBlock {
     width: 37.5%;
     height: 52.5%;
-    background: black;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
 }
 
@@ -24,7 +24,7 @@
 
 .changeProfile .cardBlock .cardBlockHeader {
     width: 92.5%;
-    height: 25%;
+    height: 22.5%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -118,7 +118,7 @@
 
 .changeProfile .cardBlock .cardBlockFooter {
     width: 92.5%;
-    height: 15%;
+    height: 17.5%;
     margin: 0 auto;
 }
 

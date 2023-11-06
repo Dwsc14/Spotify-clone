@@ -2,6 +2,7 @@ package com.Controllers;
 
 import com.Models.Playlist;
 import com.Models.Song;
+import com.Models.User;
 import com.Utilities.PlaylistDao;
 import com.Utilities.ProfileDao;
 import com.Utilities.SongDao;
@@ -37,8 +38,10 @@ public class ProfileController extends HttpServlet {
             throws ServletException, IOException {
         session = request.getSession();
         try {
+            User user = (User) session.getAttribute("User");
+            
             ProfileDao profileDao = new ProfileDao();
-            List<Song> songOfUser = profileDao.getSongofUser("1698672041682-cb95e995-efa4-4b4f-96b8-de05c43a644f");
+            List<Song> songOfUser = profileDao.getSongofUser(user.getUserId());
             
             session.setAttribute("songOfUser", songOfUser);
             
