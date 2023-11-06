@@ -1,6 +1,7 @@
 package com.Controllers;
 
 import com.Models.Playlist;
+import com.Models.Search;
 import com.Models.Song;
 import com.Models.User;
 import com.Utilities.PlaylistDao;
@@ -42,8 +43,11 @@ public class ProfileController extends HttpServlet {
             
             ProfileDao profileDao = new ProfileDao();
             List<Song> songOfUser = profileDao.getSongofUser(user.getUserId());
+            List<Search>playlistOfUser = profileDao.getPlayListofUser(user.getUserId());
             
             session.setAttribute("songOfUser", songOfUser);
+            session.setAttribute("playlistOfUser", playlistOfUser);
+
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("profile/index.jsp");
             dispatcher.forward(request, response);
