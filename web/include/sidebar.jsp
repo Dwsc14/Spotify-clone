@@ -1,7 +1,6 @@
 <%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 
-<c:set var="plist" value="${sessionScope.playlist}" />
-<c:set var="newPlaylist" value="${plist}" />
+<c:set var="plist" value="${playlist}" />
 <aside>
     <div class="inside">
         <div class="top">
@@ -39,15 +38,13 @@
             </div>
 
             <div class="menu_song">
-                <c:forEach items="${newPlaylist}" var="playlistEntry">
+                <c:forEach items="${plist}" var="playlistEntry">
                     <div class="songItem">
                         <div class="songImg">
-                            <a href="playlist?playlistId=${playlistEntry.value.getId()}"
-                                ><img src=".${playlistEntry.value.getImagePath()}" alt="BigBang"
-                            /></a>
+                            <a href="playlist?playlistId=${playlistEntry.getId()}"><img src="${playlistEntry.getImagePath()}" alt="BigBang" /></a>
                         </div>
                         <div class="songDetails">
-                            <a href="profile?playlist=${playlistEntry.value.getId()}">${playlistEntry.value.getTitle()}</a>
+                            <a href="profile?playlist=${playlistEntry.getId()}">${playlistEntry.getTitle()}</a>
                         </div>
                     </div>
                 </c:forEach>

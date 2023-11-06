@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
-    --primary: #FFAB40;
-    --secondary: #FFD180;
+    --primary: #ffab40;
+    --secondary: #ffd180;
 }
 
 * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
 }
 
 body {
@@ -24,7 +24,6 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-
 }
 
 header .head-bar {
@@ -83,19 +82,18 @@ header .head-bar .left nav .input-search {
     display: flex;
     align-items: center;
     padding-left: 5px;
-
 }
 
 header .head-bar .left nav .input-search::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background: rgba(184, 184, 184, .1);
+    background: rgba(184, 184, 184, 0.1);
     backdrop-filter: blur(5px);
     z-index: -1;
-    border: 3px solid rgba(255, 255, 255, .25);
+    border: 3px solid rgba(255, 255, 255, 0.25);
 }
 
 header .head-bar .left nav .input-search .bi {
@@ -184,7 +182,7 @@ article .container .space-inside {
 
 article .container .inside {
     width: 97.5%;
-    height: calc(7500%/87);
+    height: calc(7500% / 87);
     margin: 0 auto;
 }
 
@@ -504,7 +502,7 @@ footer .playBack .playBack-left .songPlaying-img img {
     width: 50%;
     height: 70%;
     border-radius: 5px;
-    border: 1px solid rgba(255, 204, 128, 1.0);
+    border: 1px solid rgba(255, 204, 128, 1);
 }
 
 footer .playBack .playBack-left .songPlaying-details {

@@ -65,7 +65,7 @@
                                 <td>
                                     <div class="songInfo">
                                         <div class="songImg">
-                                            <img src=".${song.getImagePath()}" alt="" />
+                                            <img class="abcbc" src=".${song.getImagePath()}" alt="" />
                                         </div>
                                         <div class="songDetails">
                                             <p>

@@ -50,22 +50,28 @@ public class PlaylistController extends HttpServlet {
         session = request.getSession();
         User user = (User) session.getAttribute("User");
         if (user != null) {
+            List<Playlist> plist = pldao.getPlist(user.getUserId());
             String user_id = user.getUserId();
             Map<Integer, String> listPL =  pldao.getNameIdListById(user_id);
+            request.setAttribute("playlist", plist);
             request.setAttribute("playlists", listPL);
         }
 
         
-        
         Playlist pl = pldao.getPlistByPlistID(playlistID);
-
-        List<Song> songs = pl.getSongs();
         
-        request.setAttribute("id", playlistID);
+
+        if (pl != null){
+            List<Song> songs = pl.getSongs();
+            request.setAttribute("songs", songs);
+        } else {
+            pl = pldao.getPlistByID(playlistID);
+        }
         request.setAttribute("title", pl.getTitle());
         request.setAttribute("img", pl.getImagePath());
         request.setAttribute("size", pl.getSize());
-        request.setAttribute("songs", songs);
+        request.setAttribute("id", playlistID);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("infoPlayList/index.jsp");
         dispatcher.forward(request, response);
     }

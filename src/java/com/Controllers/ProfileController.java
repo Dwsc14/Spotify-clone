@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet(name = "ProfileController", urlPatterns = {"/ProfileController"})
 public class ProfileController extends HttpServlet {
