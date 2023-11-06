@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.Models.Song;
 import com.Models.User;
 
 public class UserDao {
@@ -12,6 +15,30 @@ public class UserDao {
 
     public UserDao() throws Exception {
         db = new DatabaseConnector();
+    }
+
+    public void updatePremium(String userId, String purDate, String purEnd){
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+        
+        try {
+            myConn = db.getConnection();
+            String sql = "UPDATE user "+
+                         "set purchase_date = ?, purchase_end = ?, premium = ? "+
+                         "where userId = ?";
+
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setString(1, purDate);
+            myStmt.setString(2, purEnd);
+            myStmt.setString(3, userId);
+            myStmt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
     }
 
     public int insertUser(User user) throws SQLException {

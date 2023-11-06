@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #abd1c6;
+    width: 100%;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+body .pricing-card {
+    width: 400px;
+    min-height: 300px;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.286);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+body .pricing-card .card-header {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+}
+body .pricing-card .card-header .card-btn-parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+body .pricing-card .card-header .card-btn-parent button {
+    width: calc(100% / 3);
+    height: 100%;
+    border: 0;
+    border-radius: 7px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 500;
+    transition: color 0.5s ease;
+}
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(1).active,
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(1).active ~ div {
+    left: 0px;
+    color: #fff;
+}
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(2).active,
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(2).active ~ div {
+    left: calc(100% / 3);
+    color: #fff;
+}
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(3).active,
+body .pricing-card .card-header .card-btn-parent button:nth-of-type(3).active ~ div {
+    left: calc(calc(100% / 3) * 2);
+    color: #fff;
+}
+body .pricing-card .card-header .card-btn-parent div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% / 3);
+    height: 100%;
+    background: #45a69a;
+    border-radius: 7px;
+    transition: left 0.5s ease;
+}
+body .pricing-card .card-body {
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+}
+body .pricing-card .card-body > div {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+body .pricing-card .card-body > div .card-plans {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+body .pricing-card .card-body > div .card-plans span {
+    color: gray;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+body .pricing-card .card-body > div .card-plans div {
+    display: flex;
+    justify-content: space-between;
+}
+body .pricing-card .card-body > div .card-plans div h3 {
+    font-size: 24px;
+}
+body .pricing-card .card-body > div .card-content {
+    margin-top: 25px;
+}
+body .pricing-card .card-body > div .card-content > p {
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+body .pricing-card .card-body > div .card-content .card-lists {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+body .pricing-card .card-body > div .card-content .card-lists .card-list {
+    display: flex;
+    column-gap: 10px;
+    font-size: 14px;
+}
+body .pricing-card .card-body > div .card-content .card-lists .card-list img {
+    width: 15px;
+}
+body .pricing-card .card-body > div .card-button {
+    margin-top: 35px;
+}
+body .pricing-card .card-body > div .card-button button {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #45a69a;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.286);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+body .pricing-card .card-body > div.active {
+    display: block;
+}
+@media screen and (max-width: 400px) {
+    body .pricing-card {
+        width: 320px;
+        padding: 25px;
+    }
+}

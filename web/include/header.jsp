@@ -12,8 +12,9 @@
 
         <div class="right">
             <nav>
-                <button>Explore Premium</button>
-
+                <form action="payment" method="post">
+                    <button style="width: 120px; height: 33px; margin-left: 10px">Explore Premium</button>
+                </form>
                 <c:if test="${sessionScope.User != null}">
                     <i class="bi bi-bell"></i>
                     <div class="user-profile">
