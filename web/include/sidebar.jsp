@@ -2,7 +2,7 @@
 
 <c:set var="plist" value="${sessionScope.playlist}" />
 <c:set var="newPlaylist" value="${plist}" />
-<div class="sidebar">
+<aside>
     <div class="inside">
         <div class="top">
             <div class="icon">
@@ -56,4 +56,4 @@
 
         <div class="test"></div>
     </div>
-</div>
+</aside>
