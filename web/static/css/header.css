@@ -1,11 +1,50 @@
 header {
     width: 82.5%;
     height: 13%;
-    overflow: hidden;
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1000;
+}
 
+header .header-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header .header-popup {
+    width: 10%;
+    max-height: 30%;
+    position: fixed;
+    top: 17%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background: #FFD180;
+    border: 1px solid #ccc;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+header .header-popup a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0;
+    padding: 5px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+header .header-popup a:hover {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 header .head-bar {

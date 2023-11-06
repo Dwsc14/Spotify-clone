@@ -1,5 +1,12 @@
 <%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <header>
+    <div class="header-overlay" id="header-overlay"></div>
+
+    <div class="header-popup" id="profilePopup">
+        <a href="profile">Profile</a>
+        <a href="logout">Log Out</a>
+    </div>
+
     <div class="head-bar">
         <div class="left">
             <nav>
@@ -18,7 +25,7 @@
                 <c:if test="${sessionScope.User != null}">
                     <i class="bi bi-bell"></i>
                     <div class="user-profile">
-                        <a href="profile"><img src="${sessionScope.User.getImg()}" alt="" /></a>
+                        <a href=""><img src=".${sessionScope.User.getImg()}" alt="" /></a>
                     </div>
                 </c:if>
                 <c:if test="${sessionScope.User == null}">
