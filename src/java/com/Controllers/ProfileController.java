@@ -2,7 +2,10 @@ package com.Controllers;
 
 import com.Models.Playlist;
 import com.Models.Song;
+import com.Models.User;
 import com.Utilities.PlaylistDao;
+import com.Utilities.ProfileDao;
+import com.Utilities.SongDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,11 +20,35 @@ import java.util.Map;
 
 @WebServlet(name = "ProfileController", urlPatterns = {"/ProfileController"})
 public class ProfileController extends HttpServlet {
+    SongDao dao;
+    PlaylistDao pldao;
+    HttpSession session = null;
+
+    public void init() throws ServletException {
+        super.init();
+        try {
+            dao = new SongDao();
+            pldao = new PlaylistDao();
+        } catch (Exception exc) {
+            throw new ServletException(exc);
+        }
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("profile/index.jsp");
-        dispatcher.forward(request, response);
+        session = request.getSession();
+        try {
+            User user = (User) session.getAttribute("User");
+            
+            ProfileDao profileDao = new ProfileDao();
+            List<Song> songOfUser = profileDao.getSongofUser(user.getUserId());
+            
+            session.setAttribute("songOfUser", songOfUser);
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("profile/index.jsp");
+            dispatcher.forward(request, response);
+        } catch (Exception e) {
+        }
     }
 
     @Override

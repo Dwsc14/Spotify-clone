@@ -1,33 +1,39 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <article>
     <div class="container">
         <div class="inside">
+            <c:if test="${sessionScope.User != null}">
             <div class="userInfo">
                 <div class="userAva">
-                    <img src="static/img/def_ava.jpg" alt="" />
+                    <img src=".${sessionScope.User.getImg()}" alt="" />
                 </div>
 
                 <div class="userName">
                     <p id="line1">Profile</p>
-                    <a class="change-profile" id="line2">Ran Mori</a>
+                    <a class="change-profile" id="line2">${sessionScope.User.getFullName()}</a>
                     <p id="line3">... Public Playlist</p>
                 </div>
             </div>
-
+            </c:if>
+                    
             <div class="userProfile-song">
                 <div class="userProfile-song-title">
                     <p>Song</p>
                 </div>
+                <c:forEach items="${songOfUser}" var="sOfu">
                 <div class="userProfile-song-each">
                     <div class="userProfile-song-left">
                         <div class="userProfile-song-img">
-                            <img src="static/img/def_ava.jpg" alt="">
+                            <img src=".${sOfu.getImagePath()}" alt="">
                         </div>
                         <div class="userProfile-song-details">
                             <a href="">
-                                <p id="userProfile-song-name">Khong The Say</p>
+                                <p id="userProfile-song-name">${sOfu.getTitle()}</p>
                             </a>
                             <a href="">
-                                <p id="userProfile-song-author">HIEUTHUHAI</p>
+                                <p id="userProfile-song-author">${sOfu.getUser().getFullName()}</p>
                             </a>
                         </div>
                     </div>
@@ -37,7 +43,7 @@
                         </button>
                     </div>
                 </div>
-
+                </c:forEach>
 
             </div>
 

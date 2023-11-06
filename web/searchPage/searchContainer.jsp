@@ -8,14 +8,15 @@
                 <div class="searchSong-type">
                     <p>Songs</p>
                 </div>
+                <c:forEach items="${searchSong}" var="song">
                 <div class="searchSong-row">
                     <div class="searchSong-row-left">
                         <div class="searchSong-row-img">
-                            <img src="static/img/def_ava.jpg" alt="">
+                            <img src=".${song.getImagePath()}" alt="">
                         </div>
                         <div class="searchSong-row-details">
-                            <a href=""><p id="searchSong-name">Khong The Say</p></a>
-                            <a href=""><p id="searchSong-author">HIEUTHUHAI</p></a>
+                            <a href=""><p id="searchSong-name">${song.getTitle()}</p></a>
+                            <a href=""><p id="searchSong-author">${song.getUser().getFullName()}</p></a>
                         </div>
                     </div>
                     <div class="searchSong-row-right">
@@ -24,7 +25,7 @@
                         </button>
                     </div>
                 </div>
-
+                </c:forEach>
                 <!-- bỏ 4 bài -->
                 
             </div>
@@ -55,7 +56,7 @@
                         <c:forEach items="${searchUser}" var="user">
                         <a href="#" class="index">
                             <div class="usersImg">
-                                <img src=".${user.getImagePath()}" alt="">
+                                <img src=".${user.getImg()}" alt="">
                             </div>
                             <div class="songDetail">
                                 <p id="nameSong">${user.getFullName()}</p>

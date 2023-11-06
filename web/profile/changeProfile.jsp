@@ -6,7 +6,7 @@
         </div>
         <div class="cardBlockBody">
             <div class="cardBlockBody-left">
-                <a href=""><img src="static/img/ran.jpg" alt="" /></a>
+                <a href=""><img src=".${sessionScope.User.getImg()}" alt="" /></a>
             </div>
             <div class="cardBlockBody-right">
                 <div class="changeName">

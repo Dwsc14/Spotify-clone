@@ -18,7 +18,7 @@
                 <c:if test="${sessionScope.User != null}">
                     <i class="bi bi-bell"></i>
                     <div class="user-profile">
-                        <img src="${sessionScope.User.getImg()}" alt="" />
+                        <a href="profile"><img src=".${sessionScope.User.getImg()}" alt="" /></a>
                     </div>
                 </c:if>
                 <c:if test="${sessionScope.User == null}">
