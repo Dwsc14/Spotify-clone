@@ -163,8 +163,15 @@ article {
   width: 82.5%;
   position: fixed;
   top: 13%;
+  /* Đặt top bằng chiều cao của header */
   bottom: 12%;
+  /* Đặt bottom bằng chiều cao của footer */
   right: 0;
+}
+
+article a{
+  text-decoration: none;
+  color: #FFF;
 }
 
 article .container {
@@ -178,6 +185,101 @@ article .container .inside {
   width: 97.5%;
   height: calc(7500%/87);
   margin: 0 auto;
+}
+
+article .container .inside .searchSong {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-top: 2%;
+}
+
+article .container .inside .searchSong .searchSong-type{
+  width: 100%;
+  height: 11%;
+  color: #FFF;
+  padding-top: 0.75%;
+}
+
+article .container .inside .searchSong .searchSong-type p{
+  display: inline-block;
+  font-size: 22.5px;
+  font-weight: 600;
+  color: #FFF;
+  margin-left: 1.5%;
+}
+
+article .container .inside .searchSong-row {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+article .container .inside .searchSong-row:hover{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+article .container .inside .searchSong-row .searchSong-row-left {
+  height: 100%;
+  width: 77%;
+  display: flex;
+  align-items: center;
+}
+
+article .container .inside .searchSong-row .searchSong-row-left .searchSong-row-img {
+  width: 8%;
+  height: 83%;
+}
+
+article .container .inside .searchSong-row .searchSong-row-left .searchSong-row-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+article .container .inside .searchSong-row .searchSong-row-left .searchSong-row-details{
+  width: 92%;
+  height: 83%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2%;
+}
+
+#searchSong-name{
+  font-size: 17px;
+  font-weight: 600;
+  padding-bottom: 0.2%;
+}
+
+#searchSong-author{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+article .container .inside .searchSong-row .searchSong-row-right {
+  height: 100%;
+  width: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article .container .inside .searchSong-row .searchSong-row-right .btn-like{
+  background: none;
+  color: white;
+  border: none;
+}
+
+article .container .inside .searchSong-row .searchSong-row-right .btn-like:hover{
+  color: red;
+}
+
+article .container .inside .searchSong-row .searchSong-row-right .btn-like i{
+  font-size: 20px;
 }
 
 article .container .inside .menu {
@@ -194,7 +296,7 @@ article .container .inside .menu .playList {
   margin: 0 auto;
 }
 
-article .container .inside .menu .playList #type {
+article .container .inside .menu .playList #type{
   display: inline-block;
   width: 50%;
   height: 10%;
@@ -233,23 +335,14 @@ article .container .inside .menu .playList .list a {
 
 article .container .inside .menu .playList .list .index:hover {
   background: rgba(255, 255, 255, 0.1);
-
 }
 
-article .container .inside .menu .playList .list .index .songImg,
 article .container .inside .menu .playList .list .index .usersImg {
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-article .container .inside .menu .playList .list .index .songImg img {
-  width: 80%;
-  height: 85%;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
 article .container .inside .menu .playList .list .index .songDetail {
@@ -280,4 +373,3 @@ article .container .inside .menu .playList .list .index .usersImg img {
   border-radius: 50%;
   object-fit: cover;
 }
-
