@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import com.Models.TransactionData;
 import com.Models.User;
-import com.Utilities.PlaylistDao;
-import com.Utilities.SongDao;
 import com.Utilities.UserDao;
 import com.google.gson.Gson;
 import java.time.LocalDate;
@@ -51,7 +49,6 @@ public class Payment extends HttpServlet {
         processRequest(request, response);
         
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

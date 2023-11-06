@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import com.Models.User;
+import com.Utilities.PlaylistDao;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,8 +28,17 @@ import javax.servlet.annotation.MultipartConfig;
         fileSizeThreshold = 1024 * 1024 * 4
 )
 public class Image extends HttpServlet {
-
+    private PlaylistDao pldao;
     HttpSession session = null;
+
+    public void init() throws ServletException {
+        super.init();
+        try {
+            pldao = new PlaylistDao();
+        } catch (Exception exc) {
+            throw new ServletException(exc);
+        }
+    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,12 +57,20 @@ public class Image extends HttpServlet {
 
             System.out.println(imagePart);
 
+            int id = pldao.getMaxId() + 1;
             String nameOfPlist = request.getParameter("plist-name");
             
-            String fileName = getFileName(imagePart);
+            String temp = getFileName(imagePart);
+            String fileExtension = temp.substring(temp.lastIndexOf(".") + 1);
+            String fileName = "pl+" + Integer.toString(id) + "." + fileExtension;
+
+            String fullPath = "storage\\" + user.getUserId() + "\\image\\" + fileName;
+
             OutputStream out = null;
             InputStream filecontent = null;
-            
+        
+            pldao.createPlaylist(id, user.getUserId(), nameOfPlist, fullPath);
+
             try {
                 out = new FileOutputStream(new File(uploadPath + File.separator
                         + fileName));

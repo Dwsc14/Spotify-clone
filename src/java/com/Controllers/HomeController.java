@@ -17,7 +17,6 @@ import com.Models.Song;
 import com.Models.User;
 import com.Utilities.PlaylistDao;
 import com.Utilities.SongDao;
-import com.Utilities.UserDao;
 
 public class HomeController extends HttpServlet {
 
@@ -42,15 +41,9 @@ public class HomeController extends HttpServlet {
         try {
             User user = (User) session.getAttribute("User");
 
-            if (user != null) {
-                Map<Integer, Playlist> plist;
-                if (session.getAttribute("playlist") == null){
-                   plist = pldao.getPlistById(user.getUserId());
-                } else {
-                    plist = (Map<Integer, Playlist>) session.getAttribute("playlist");
-                }
-                session.setAttribute("playlist", plist);
-            }
+            List<Playlist> plist = pldao.getPlist(user.getUserId());
+            System.out.println(plist);
+            request.setAttribute("playlist", plist);
 
             List<Song> recommend_songs = (List<Song>) dao.getSongbyNum(5);
             List<Song> random_songs = (List<Song>) dao.getRandomSongbyNum(5);

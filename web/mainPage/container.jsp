@@ -1,8 +1,6 @@
-<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <article>
-
     <div class="container">
         <div class="inside">
             <div class="advertise">
@@ -113,7 +111,7 @@
                         </c:forEach>
                     </div>
                 </div>
-            </div> 
+            </div>
 
             <div class="space-inside"></div>
         </div>

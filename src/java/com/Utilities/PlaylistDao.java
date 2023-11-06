@@ -22,6 +22,30 @@ public class PlaylistDao {
         userDao = new UserDao();
     }
 
+
+    public int getMaxId(){
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT MAX(playlistId) as max  FROM playlists";
+
+            myStmt = myConn.prepareStatement(sql);
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                return rs.getInt("max");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return 0;
+    }
+
     public Playlist getPlistByPlistID(int playlistID){
         Playlist pl = null;
         Connection myConn = null;
@@ -103,8 +127,8 @@ public class PlaylistDao {
             myStmt = myConn.prepareStatement(sql);
             myStmt.setInt(1, playlistID);
             myStmt.setString(2, Title);
-            myStmt.setString(2, userID);
-            myStmt.setString(2, path);
+            myStmt.setString(3, userID);
+            myStmt.setString(4, path);
 
             myStmt.executeUpdate();
 
@@ -155,6 +179,60 @@ public class PlaylistDao {
         } finally {
             db.close(myConn, myStmt, rs);
         }
+    }
+
+    public Playlist getPlistByID(int PlaylistID){
+        Playlist playlist = new Playlist();
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT * FROM Playlists WHERE PlaylistID = ?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, PlaylistID);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                playlist = new Playlist(rs.getInt("PlaylistID"), rs.getString("Title"), new ArrayList<>(), rs.getString("image_path"));
+            }
+            return playlist;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return playlist;
+    }
+
+    public List<Playlist> getPlist(String userID){
+        List<Playlist> playlists = new ArrayList<>();
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+
+        try {
+            myConn = db.getConnection();
+            String sql = "SELECT * FROM Playlists WHERE UserID = ?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setString(1, userID);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                System.out.println("Ahihi");
+                Playlist temp = new Playlist(rs.getInt("PlaylistID"), rs.getString("Title"), new ArrayList<>(), rs.getString("image_path"));
+                playlists.add(temp);
+            }
+            return playlists;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+        return playlists;
     }
 
     public Map<Integer, String> getNameIdListById(String userID){
