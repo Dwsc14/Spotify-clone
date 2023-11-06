@@ -16,4 +16,4 @@ if (inputElement) {
     });
 }
 divElement = document.querySelector("header .head-bar .left nav .input-search::before");
-console.log(divElement); 
+console.log(divElement);

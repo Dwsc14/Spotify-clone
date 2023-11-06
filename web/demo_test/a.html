@@ -6,75 +6,9 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="popup" style="display: none; position: absolute; background-color: #fff; border: 1px solid #ccc; padding: 10px">
-            <span id="playlistName" data-playlist=""></span>
-            <ul>
-                <li><a href="#" data-playlist="${item.key}">${item.value.title}</a></li>
-                <li><a href="#" data-playlist="${item.key}">${item.value.title}</a></li>
-                <li><a href="#" data-playlist="${item.key}">${item.value.title}</a></li>
-            </ul>
-        </div>
-
-        <div id="song+${song.id}" style="display: flex; align-items: center">
-            <h3 style="margin-right: 50px">${song.title}</h3>
-            <button class="song-button" data-songid="${song.id}">
-                <i class="bx bxs-bowl-rice" style="cursor: pointer"></i>
-            </button>
-        </div>
-
-        <div id="song+${song.id}" style="display: flex; align-items: center">
-            <h3 style="margin-right: 50px">${song.title}</h3>
-            <button class="song-button" data-songid="${song.id}">
-                <i class="bx bxs-bowl-rice" style="cursor: pointer"></i>
-            </button>
-        </div>
-
-        <script>
-            var buttons = document.querySelectorAll(".song-button");
-            var popup = document.getElementById("popup");
-            var playlistName = document.getElementById("playlistName");
-            var songId = null;
-
-            function onPlaylistLinkClick(event) {
-                var playlist = event.currentTarget.getAttribute("data-playlist");
-                playlistName.setAttribute("data-playlist", playlist);
-                playlistName.textContent = "Playlist: " + playlist;
-
-                var url = "Songcontroller?songId=" + songId + "&playlist=" + playlist;
-
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", url, true);
-                xhr.send();
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                    }
-                };
-            }
-
-            buttons.forEach(function (button) {
-                button.addEventListener("click", function (event) {
-                    // Lấy songId từ thuộc tính data-songid của nút
-                    songId = event.currentTarget.getAttribute("data-songid");
-                    var rect = event.currentTarget.getBoundingClientRect();
-
-                    popup.style.display = "block";
-                    popup.style.top = rect.top + window.scrollY + "px";
-                    popup.style.left = rect.right + window.scrollX + "px";
-
-                    var playlistLinks = popup.querySelectorAll("ul li a");
-                    playlistLinks.forEach(function (link) {
-                        link.removeEventListener("click", onPlaylistLinkClick);
-                        link.addEventListener("click", onPlaylistLinkClick);
-                    });
-                });
-            });
-
-            document.addEventListener("click", function (event) {
-                if (!popup.contains(event.target) && !Array.from(buttons).some((button) => button.contains(event.target))) {
-                    popup.style.display = "none";
-                }
-            });
-        </script>
+        <form action="ImageUploadServlet" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadedImage" accept="image/*" />
+            <input type="submit" value="Tải lên ảnh" />
+        </form>
     </body>
 </html>

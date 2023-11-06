@@ -90,6 +90,31 @@ public class PlaylistDao {
     }
     
 
+    public void createPlaylist(int playlistID, String userID, String Title, String path){
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
+        
+        try {
+            myConn = db.getConnection();
+            String sql = "insert into playlists(PlaylistID, Title, UserID, image_path) " + 
+                         "values ( ?, ?, ?, ?)";
+
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, playlistID);
+            myStmt.setString(2, Title);
+            myStmt.setString(2, userID);
+            myStmt.setString(2, path);
+
+            myStmt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
+        }
+    }
+
     public void delSongToPlaylist(int playlistID, int songID){
         Connection myConn = null;
         PreparedStatement myStmt = null;

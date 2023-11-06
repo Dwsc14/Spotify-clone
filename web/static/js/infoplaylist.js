@@ -12,23 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
             var isChangeColor = event.currentTarget.classList.contains("change-color");
 
             if (isChangeColor) {
-                // Đóng popup và thay đổi màu của btn-like
                 closePopup();
             } else {
-                // Hiển thị popup và lớp overlay
                 popup.style.display = "block";
                 overlay.style.display = "block";
 
-                // Khi popup hiển thị, đóng băng màn hình nền bằng cách ngăn scroll
                 document.body.style.overflow = "hidden";
 
-                // Thay đổi màu của btn-like
                 event.currentTarget.classList.add("change-color");
             }
         });
     });
 
-    // Hàm để đóng popup và thay đổi màu btn-like
     function closePopup() {
         popup.style.display = "none";
         overlay.style.display = "none";
@@ -74,3 +69,17 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("remove");
     });
 });
+
+const popup = document.querySelector(".popup-container");
+const open = document.getElementsByClassName("bi bi-plus")[0];
+
+const openChangeProfile = () => {
+    console.log(popup);
+    popup.style.display = "flex";
+};
+
+const closeChangeProfile = () => {
+    popup.style.display = "none";
+};
+
+open.addEventListener("click", openChangeProfile);

@@ -10,13 +10,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchDao {
+public class SearchDAO {
     private final DatabaseConnector db;
     private final UserDao userDao;
     private final PlaylistDao playlistDao;
     private final SongDao songDao;
 
-    public SearchDao() throws Exception {
+    public SearchDAO() throws Exception {
         db = new DatabaseConnector();
         userDao = new UserDao();
         songDao = new SongDao();

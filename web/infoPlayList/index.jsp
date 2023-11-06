@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="static/css/sidebar.css" />
         <link rel="stylesheet" href="static/css/header.css" />
         <link rel="stylesheet" href="static/css/footer.css" />
+        <link rel="stylesheet" href="static/css/popup.css" />
         <link rel="stylesheet" href="static/css/infoPlayList.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
         <link
@@ -18,6 +19,7 @@
     </head>
 
     <body>
+        <jsp:include page="popup.jsp" />
         <jsp:include page="../include/header.jsp" />
         <jsp:include page="infoPlayList.jsp" />
         <jsp:include page="../include/sidebar.jsp" />

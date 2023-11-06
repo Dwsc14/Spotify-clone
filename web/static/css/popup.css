@@ -1,0 +1,258 @@
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+}
+
+.popup-card {
+    width: 37.5%;
+    background: black;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.change-profile {
+    cursor: pointer;
+}
+
+.popup-container .popup-card .popup-cardHeader {
+    width: 92.5%;
+    height: 25%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.popup-container .popup-card .popup-cardHeader p {
+    font-size: 22.5px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.popup-container .popup-card .popup-cardHeader #exit {
+    font-size: 22.5px;
+    color: gray;
+}
+
+.popup-container .popup-card .popup-cardHeader #exit:hover {
+    font-size: 22.5px;
+    color: #fff;
+}
+
+.popup-container .popup-card .popup-cardBody {
+    width: 95%;
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-left img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-right .changeName {
+    width: 90%;
+    height: 40%;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-right .changeName input {
+    width: 100%;
+    height: 40px;
+    background: hsla(0, 0%, 100%, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-right .popup-cardBody-rightButton {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2%;
+}
+
+.popup-container .popup-card .popup-cardBody .popup-cardBody-right .popup-cardBody-rightButton button {
+    width: 32.5%;
+    height: 87.5%;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+.popup-container .popup-card .popup-cardFooter {
+    width: 92.5%;
+    height: 15%;
+    margin: 0 auto;
+}
+
+.popup-container .popup-card .popup-cardFooter p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #fff;
+}
+.popup-card {
+    width: 37.5%;
+    background: black;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.popup-cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.popup-cardHeader p {
+    font-size: 22.5px;
+    font-weight: 500;
+}
+
+.popup-cardHeader #exit {
+    font-size: 22.5px;
+    color: gray;
+    text-decoration: none;
+}
+
+.popup-cardHeader #exit:hover {
+    color: #fff;
+}
+
+.popup-cardBody {
+    display: flex;
+}
+
+.popup-cardBody-left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-cardBody-left img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.popup-cardBody-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.popup-cardBody-right .changeName {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.popup-cardBody-right .changeName input {
+    width: 100%;
+    background: hsla(0, 0%, 100%, 0.1);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 12px;
+}
+
+.popup-cardBody-right .popup-cardBody-rightButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.popup-cardBody-right .popup-cardBody-rightButton button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+.popup-cardFooter {
+    padding: 10px;
+}
+
+.popup-cardFooter p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.popup-cardBody-left label {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup-cardBody-left input[type="file"] {
+    display: none;
+}
+
+.popup-cardBody-left label {
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}

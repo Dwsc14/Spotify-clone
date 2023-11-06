@@ -4,11 +4,11 @@
             <div class="songPlaying">
                 <div class="songPlaying-space"></div>
                 <div class="songPlaying-img">
-                    <img src="mainPage/static/img/blackpink.jpg" alt="" />
+                    <img src="static/img/def_ava.jpg" alt="" />
                 </div>
                 <div class="songPlaying-details">
-                    <a href="" id="songPlaying-details-name">Hope Not</a>
-                    <a href="" id="songPlaying-details-author">BlackPink</a>
+                    <a href="" id="songPlaying-details-name">404 !!!</a>
+                    <a href="" id="songPlaying-details-author">SpotiJam</a>
                 </div>
                 <div class="songPlaying-space"></div>
             </div>

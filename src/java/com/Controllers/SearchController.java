@@ -5,7 +5,7 @@ import com.Models.Search;
 import com.Models.Song;
 import com.Models.User;
 
-import com.Utilities.SearchDao;
+import com.Utilities.SearchDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -26,7 +26,7 @@ public class SearchController extends HttpServlet {
 
         try {
             String txtSearch = request.getParameter("txtSearch");
-            SearchDao searchDao = new SearchDao();
+            SearchDAO searchDao = new SearchDAO();
             List<User> userName = searchDao.searchUser(txtSearch);
             List<Song> songName = searchDao.searchSong(txtSearch,4);
             List<Search> playListName = searchDao.searchPlaylist(txtSearch);
