@@ -43,7 +43,7 @@
                     <div class="songItem">
                         <div class="songImg">
                             <a href="playlist?playlistId=${playlistEntry.value.getId()}"
-                                ><img src=".${playlistEntry.value.getImagePath()}" alt="BigBang"
+                                ><img src="${playlistEntry.value.getImagePath()}" alt="BigBang"
                             /></a>
                         </div>
                         <div class="songDetails">
