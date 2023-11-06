@@ -337,6 +337,7 @@ article .container .inside .menu .playList .list .index:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
+article .container .inside .menu .playList .list .index .songImg, 
 article .container .inside .menu .playList .list .index .usersImg {
   width: 100%;
   height: 70%;
@@ -365,6 +366,13 @@ article .container .inside .menu .playList .list .index .songDetail #nameAuthor 
   font-size: 12px;
   font-weight: 400;
   color: gray;
+}
+
+article .container .inside .menu .playList .list .index .songImg img {
+  width: 80%;
+  height: 85%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 article .container .inside .menu .playList .list .index .usersImg img {

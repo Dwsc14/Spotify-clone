@@ -1,3 +1,4 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %> 
 <header>
     <div class="head-bar">
         <div class="left">
@@ -7,8 +8,10 @@
                     <i class="bi bi-chevron-right"></i>
                 </div>
                 <div id="myDiv" class="input-search">
-                    <i class="input-icon bi bi-search"></i>
-                    <input type="text" id="myInput" placeholder="Search Music..." />
+                    <form action="SearchController" method="post">
+                        <i class="input-icon bi bi-search"></i>
+                        <input type="text" name="txtSearch" id="myInput" placeholder="Search Music...">
+                    </form>
                 </div>
             </nav>
         </div>
@@ -18,7 +21,7 @@
                 <button>Explore Premium</button>
                 <i class="bi bi-bell"></i>
                 <div class="user-profile">
-                    <img src="static/img/user.jpg" alt="" />
+                    <img src="static/img/user.jpg" alt="">
                 </div>
             </nav>
         </div>
