@@ -8,7 +8,7 @@
                     <i class="bi bi-chevron-right"></i>
                 </div>
                 <div id="myDiv" class="input-search">
-                    <form action="SearchController" method="post">
+                    <form action="search" method="post">
                         <i class="input-icon bi bi-search"></i>
                         <input type="text" name="txtSearch" id="myInput" placeholder="Search Music...">
                     </form>
