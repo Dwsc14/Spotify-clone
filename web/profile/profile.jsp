@@ -1,6 +1,4 @@
-<div class="page">
-    <div class="space1"></div>
-
+<article>    
     <div class="container">
         <div class="inside">
             <div class="userInfo">
@@ -13,6 +11,10 @@
                     <a class="change-profile" id="line2">Ran Mori</a>
                     <p id="line3">... Public Playlist</p>
                 </div>
+            </div>
+
+            <div class="userProfile-song">
+                
             </div>
 
             <div class="menu">
@@ -51,6 +53,4 @@
 
             <div class="space-inside"></div>
         </div>
-    </div>
-    <div class="space2"></div>
-</div>
+</article>
