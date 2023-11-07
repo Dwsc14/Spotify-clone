@@ -1,5 +1,6 @@
 package com.Utilities;
 
+import com.Models.Search;
 import com.Models.Song;
 import com.Models.User;
 import java.sql.Connection;
@@ -47,26 +48,34 @@ public class ProfileDao {
         return songs;
     }
     
-    
-    public static void main(String[] args) throws Exception {
-        ProfileDao test = new ProfileDao();
-
-        // Replace "YourUserName" with the actual username you want to search for
-        String userID = "1698672041682-cb95e995-efa4-4b4f-96b8-de05c43a644f";
-
+    public List<Search> getPlayListofUser(String userID){
+        List<Search> pls = new ArrayList<>();
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet rs = null;
         try {
-            List<Song> users = test.getSongofUser(userID);
+            myConn = db.getConnection();
+            String sql = "SELECT playlists.* FROM playlists " +
+                        "JOIN user ON playlists.UserID = user.userId " +
+                        "WHERE user.userId = ?";
 
-            if (users.isEmpty()) {
-                System.out.println("No users found with the username: " + userID);
-            } else {
-                System.out.println("Users found with the username: " + userID);
-                for (Song user : users) {
-                    System.out.println(user.getTitle() + ": " + user.getUser());
-                }
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setString(1, userID);
+
+            rs = myStmt.executeQuery();
+
+            while (rs.next()) {
+                User user = userDao.getUserById(rs.getString("UserID"), true);
+                Search plws = new Search(rs.getString("Title"),user,rs.getString("image_path"));
+                pls.add(plws);
             }
+            return pls;
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            db.close(myConn, myStmt, rs);
         }
+        return pls;
     }
+
 }
