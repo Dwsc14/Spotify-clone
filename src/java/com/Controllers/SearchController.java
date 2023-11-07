@@ -51,6 +51,7 @@ public class SearchController extends HttpServlet {
             request.setAttribute("playlist", plist);
             request.setAttribute("playlists", listPL);
 
+
             request.setAttribute("searchUser", userName);
             request.setAttribute("searchSong", songName);
             request.setAttribute("searchPlaylist", playListName);

@@ -2,17 +2,36 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <article>
+    <div class="overlay" id="overlay"></div>
+
+    <c:if test="${sessionScope.User != null}">
+        <div class="popup" id="popup">
+            <p id="addSong">Add to playlist</p>
+            <p id="removeSong">Remove to playlist</p>
+        </div>
+
+        <div class="popup1" id="">
+            <p>Add to playlist</p>
+            <c:forEach items="${playlists}" var="entry">
+                <c:if test="${entry.key != id}">
+                    <p class="sdhjas" pl-id="${entry.key}">${entry.value}</p>
+                </c:if>
+            </c:forEach>
+        </div>
+    </c:if>
+
+
     <div class="container">
         <div class="inside">
-            <c:if test="${sessionScope.User != null}">
+            <c:if test="${usr != null}">
             <div class="userInfo">
                 <div class="userAva">
-                    <img src=".${sessionScope.User.getImg()}" alt="" />
+                    <img src=".${usr.getImg()}" alt="" />
                 </div>
 
                 <div class="userName">
                     <p id="line1">Profile</p>
-                    <a class="change-profile" id="line2">${sessionScope.User.getFullName()}</a>
+                    <a class="change-profile" id="line2">${usr.getFullName()}</a>
                     <p id="line3">... Public Playlist</p>
                 </div>
             </div>
@@ -38,8 +57,8 @@
                         </div>
                     </div>
                     <div class="userProfile-song-right">
-                        <button class="btn-like">
-                            <i class="bi bi-heart-fill"></i>
+                        <button song-id="${sOfu.getId()}" class="btn-like">
+                            <i  class="bi bi-heart-fill"></i>
                         </button>
                     </div>
                 </div>

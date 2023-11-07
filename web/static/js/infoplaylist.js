@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
             songId = event.currentTarget.getAttribute("song-id");
             playlistId = event.currentTarget.getAttribute("playlist-id");
 
+            console.log(songId);
+            console.log(playlistId);
+
             if (isChangeColor) {
                 closePopup();
             } else {

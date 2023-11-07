@@ -3,7 +3,7 @@
     <div class="header-overlay" id="header-overlay"></div>
 
     <div class="header-popup" id="profilePopup">
-        <a href="profile">Profile</a>
+        <a href="profile?userID=${sessionScope.User.getUserId()}">Profile</a>
         <a href="logout">Log Out</a>
     </div>
 
