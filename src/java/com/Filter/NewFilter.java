@@ -56,7 +56,7 @@ public class NewFilter implements Filter {
         String url = httpRequest.getServletPath();
 
         if (url.endsWith(".jsp")) {
-             httpResponse.sendRedirect("/home");
+             httpResponse.sendRedirect("home");
         }
         
         Throwable problem = null;
