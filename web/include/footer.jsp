@@ -18,7 +18,7 @@
                 <div class="playBack-control-space"></div>
                 <div class="playBack-control-button">
                     <a href=""><i class="bi bi-skip-start-fill"></i></a>
-                    <a href="" id="play-button"><i class="bi bi-play-circle-fill"></i></a>
+                    <p href="" id="play-button"><i class="bi bi-play-circle-fill"></i></p>
                     <a href=""><i class="bi bi-skip-end-fill"></i></a>
                 </div>
                 <div class="playBack-control-space"></div>

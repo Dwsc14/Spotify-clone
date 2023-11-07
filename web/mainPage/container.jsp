@@ -80,9 +80,9 @@
                     <p id="type">Random Song You Might Enjoy</p>
                     <div class="list">
                         <c:forEach items="${Random}" var="song">
-                            <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src=".${song.imagePath}" alt="" />
+                            <a class="song">
+                                <div data-author="${song.getUser().getFullName()}" data-song=".${song.getSrc()}" class="songImg playSong">
+                                    <img class="abcbc" src=".${song.imagePath}" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">${song.title}</p>
@@ -100,8 +100,8 @@
                     <div class="list">
                         <c:forEach items="${Recommend}" var="song">
                             <a href="#" class="song">
-                                <div class="songImg">
-                                    <img src=".${song.imagePath}" alt="" />
+                                <div data-author="${song.getUser().getFullName()}" data-song=".${song.getSrc()}" class="songImg playSong">
+                                    <img class="abcbc" src=".${song.imagePath}" alt="" />
                                 </div>
                                 <div class="songDetail">
                                     <p id="nameSong">${song.title}</p>

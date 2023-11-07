@@ -42,10 +42,10 @@ public class ProfileController extends HttpServlet {
             
             ProfileDao profileDao = new ProfileDao();
             List<Song> songOfUser = profileDao.getSongofUser(user.getUserId());
-            List<Search>playlistOfUser = profileDao.getPlayListofUser(user.getUserId());
+            // List<Search>playlistOfUser = profileDao.getPlayListofUser(user.getUserId());
             
             session.setAttribute("songOfUser", songOfUser);
-            session.setAttribute("playlistOfUser", playlistOfUser);
+            // session.setAttribute("playlistOfUser", playlistOfUser);
 
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("profile/index.jsp");

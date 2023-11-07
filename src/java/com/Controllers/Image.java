@@ -69,7 +69,6 @@ public class Image extends HttpServlet {
             OutputStream out = null;
             InputStream filecontent = null;
         
-            pldao.createPlaylist(id, user.getUserId(), nameOfPlist, fullPath);
 
             try {
                 out = new FileOutputStream(new File(uploadPath + File.separator
@@ -83,8 +82,11 @@ public class Image extends HttpServlet {
                     out.write(bytes, 0, read);
                 }
                 
+                pldao.createPlaylist(id, user.getUserId(), nameOfPlist, fullPath);
+
             } catch (FileNotFoundException fne) {
             }
+            response.sendRedirect("playlist?playlistId="+Integer.toString(id));
         } catch (Exception e){
             System.out.println(e);
         }

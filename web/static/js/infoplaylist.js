@@ -7,11 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var popup1Visible = false;
     var popup2Visible = false;
 
+    var songId;
+    var playlistId;
+
     likeButtons.forEach(function (button) {
         button.addEventListener("click", function (event) {
             var isChangeColor = event.currentTarget.classList.contains("change-color");
 
-            console.log(event);
+            songId = event.currentTarget.getAttribute("song-id");
+            playlistId = event.currentTarget.getAttribute("playlist-id");
 
             if (isChangeColor) {
                 closePopup();
@@ -62,7 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var removeSong = document.getElementById("removeSong");
     removeSong.addEventListener("click", function () {
-        console.log("remove");
+        var xhr = new XMLHttpRequest();
+        var url = "playlist?action=del&playlistId=" + playlistId + "&songId=" + songId;
+
+        xhr.open("POST", url, true);
+
+        xhr.send();
+        location.reload();
+    });
+
+    var playlistButton = document.getElementsByClassName("sdhjas");
+    playlistButton = Array.from(playlistButton);
+    playlistButton.forEach(function (button) {
+        button.addEventListener("click", function (event) {
+            var pl_id = event.currentTarget.getAttribute("pl-id");
+
+            var xhr = new XMLHttpRequest();
+            var url = "playlist?action=add&playlistId=" + pl_id + "&songId=" + songId;
+
+            xhr.open("POST", url, true);
+
+            xhr.send();
+            location.reload();
+        });
     });
 });
 

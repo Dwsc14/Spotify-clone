@@ -40,6 +40,7 @@ public class PlaylistController extends HttpServlet {
             String rqSong = request.getParameter("songId");
             int songID = Integer.parseInt(rqSong);
 
+            pldao.addSongToPlaylist(playlistID, songID);            
         } else if ("del".equals(action)){
             String rqSong = request.getParameter("songId");
             int songID = Integer.parseInt(rqSong);

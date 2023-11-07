@@ -167,7 +167,7 @@ public class PlaylistDao {
         
         try {
             myConn = db.getConnection();
-            String sql = "DELETE FROM Playlistsongs WHERE PlaylistID = ? AND SongID = ?";
+            String sql = "insert into Playlistsongs(PlaylistID, SongID) values (?, ?);";
 
             myStmt = myConn.prepareStatement(sql);
             myStmt.setInt(1, playlistID);

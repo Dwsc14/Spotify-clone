@@ -2,6 +2,29 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <article>
+
+    <div class="overlay" id="overlay"></div>
+
+    <c:if test="${sessionScope.User != null}">
+        <div class="popup" id="popup">
+            <p id="addSong">Add to playlist</p>
+            <p id="removeSong">Remove to playlist</p>
+        </div>
+
+        <div class="popup1" id="">
+            <p>Add to playlist</p>
+            <c:forEach items="${playlists}" var="entry">
+                <c:if test="${entry.key != id}">
+                    <p class="sdhjas" pl-id="${entry.key}">${entry.value}</p>
+                </c:if>
+            </c:forEach>
+        </div>
+    </c:if>
+
+    <div class="popup2" id="">
+        <p>My Playlist #1</p>
+    </div>
+
     <div class="container">
         <div class="inside">
             <div class="searchSong">
@@ -20,9 +43,8 @@
                         </div>
                     </div>
                     <div class="searchSong-row-right">
-                        <button class="btn-like">
-                            <i class="bi bi-heart-fill"></i>
-                        </button>
+                        <button playlist-id="${id}" song-id="${song.getId()}" class="btn-like"><i
+                        class="bi bi-heart-fill"></i></button>
                     </div>
                 </div>
                 </c:forEach>

@@ -11,9 +11,11 @@
         </div>
 
         <div class="popup1" id="">
-            <p>Create playlist</p>
+            <p>Add to playlist</p>
             <c:forEach items="${playlists}" var="entry">
-                <p name="pl-${entry.key}">${entry.value}</p>
+                <c:if test="${entry.key != id}">
+                    <p class="sdhjas" pl-id="${entry.key}">${entry.value}</p>
+                </c:if>
             </c:forEach>
         </div>
     </c:if>

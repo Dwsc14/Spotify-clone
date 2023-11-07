@@ -17,6 +17,7 @@
         <jsp:include page="searchContainer.jsp" />
         <jsp:include page="../include/sidebar.jsp" />
         <jsp:include page="../include/footer.jsp" />
+        <script src="static/js/infoplaylist.js"></script>
 
         <script src="static/js/sidebar.js"></script>
         <script src="static/js/searchHeader.js"></script>

@@ -42,7 +42,6 @@ public class HomeController extends HttpServlet {
             User user = (User) session.getAttribute("User");
 
             List<Playlist> plist = pldao.getPlist(user.getUserId());
-            System.out.println(plist);
             request.setAttribute("playlist", plist);
 
             List<Song> recommend_songs = (List<Song>) dao.getSongbyNum(5);
